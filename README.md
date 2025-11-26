@@ -64,8 +64,6 @@ As a **user** I can **click the about link** so that **I can read about the site
 Acceptance criteria
 - When the about link in the navigation bar is clicked, the about text will display.
 ----
-### Should Have
-----
 **Create a post:**
 As a **registered user** I can **make my own posts** so that **other users can see and comment on my post**.
 <br/><br/>
@@ -82,8 +80,10 @@ Acceptance criteria
 - If the site admin is logged in as an admin, they can approve posts to be seen by users or delete them.
 - If the site admin is logged in as an admin, they can delete users accounts if they are constantly attempting to be harmful to the website and its users.
 ----
+### Should Have
+----
 **Confirmation messages:**
-As a **registered user** I can **see that my comment or post was submitted successfully** so that **I am sure my comment or post was sumbmitted**.
+As a **registered user** I can **see that my comment or post was submitted successfully** so that **I am sure my comment or post was submitted**.
 <br/><br/>
 Acceptance criteria
 - If the registered user submits a comment or post, there should be some kind of confirmation message for the user.
@@ -102,14 +102,6 @@ As a **user** I can **add a post filter** so that **I can only see posts of a sp
 <br/><br/>
 Acceptance criteria
 - The user can interact with a dropdown filter, so that only posts which show a specific kind of pet are shown (e.g dog, cat, bird etc)
-----
-**Story title template:**
-As a **role** I can **capability** so that **received benefit**.
-<br/><br/>
-Acceptance criteria
-- Acceptance criteria 1
-- Acceptance criteria 2
-- Acceptance criteria 3
 ----
 ## Product Planning
 ### Wireframes
