@@ -9,17 +9,17 @@
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
-                {% for post in userpost_list %}
+                {% for userpost in userpost_list %}
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
                                 <div class="image-flash">
-                                    <p class="author">By: {{ post.author }} - {{ post.created_on}}</p>
+                                    <p class="author">By: {{ userpost.author }} - {{ userpost.created_on}}</p>
                                 </div>
                             </div>
-                            <a href="#" class="post-link">
-                                <h2 class="card-title">{{ post.title }}</h2>
+                            <a href="{% url 'post_detail' userpost.slug %}" class="post-link">
+                                <h2 class="card-title">{{ userpost.title }}</h2>
                             </a>
                             </p>
                         </div>
