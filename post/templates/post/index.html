@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 
 <!-- index.html content starts here -->
@@ -14,6 +14,12 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
+                                {% if "placeholder" in userpost.featured_image.url %}
+                                <img class="card-img-top" src="{% static 'images/default_cat.webp' %}"
+                                    alt="placeholder image">
+                                {% else %}
+                                <img class="card-img-top" src=" {{ userpost.featured_image.url }}" alt="{{ userpost.title }}">
+                                {% endif %}
                                 <div class="image-flash">
                                     <p class="author">By: {{ userpost.author }} - {{ userpost.created_on}}</p>
                                 </div>
