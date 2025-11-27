@@ -24,9 +24,15 @@ def post_detail(request, slug):
 
     queryset = UserPost.objects.all()
     post = get_object_or_404(queryset, slug=slug)
+    comments = post.comments.all().order_by("-created_on")
+    comment_count = post.comments.filter(approved=True).count()
 
     return render(
         request,
         "post/post_detail.html",
-        {"userpost": post},
+        {
+            "userpost": post,
+            "comments": comments,
+            "comment_count": comment_count,
+        },
     )    
