@@ -7,22 +7,42 @@ from .forms import CommentForm
 # Create your views here.
 
 class PostList(generic.ListView):
+    """
+    Returns all published posts in :model:`post.UserPost`
+    and displays them in a page of six posts. 
+    **Context**
+
+    ``queryset``
+        All published instances of :model:`post.UserPost`
+    ``paginate_by``
+        Number of posts per page.
+        
+    **Template:**
+
+    :template:`post/index.html`
+    """
     queryset = UserPost.objects.all()
     template_name = "post/index.html"
     paginate_by = 6
 
 def post_detail(request, slug):
     """
-    Display an individual :model:`blog.Post`.
+    Display an individual :model:`post.UserPost`.
 
     **Context**
 
     ``post``
-        An instance of :model:`blog.Post`.
+        An instance of :model:`post.UserPost`.
+    ``comments``
+        All approved comments related to the post.
+    ``comment_count``
+        A count of approved comments related to the post.
+    ``comment_form``
+        An instance of :form:`post.CommentForm`
 
     **Template:**
 
-    :template:`blog/post_detail.html`
+    :template:`post/post_detail.html`
     """
 
     queryset = UserPost.objects.all()
@@ -57,7 +77,16 @@ def post_detail(request, slug):
 
 def comment_edit(request, slug, comment_id):
     """
-    view to edit comments
+    Display an individual comment for edit.
+
+    **Context**
+
+    ``post``
+        An instance of :model:`post.UserPost`.
+    ``comment``
+        A single comment related to the post.
+    ``comment_form``
+        An instance of :form:`post.CommentForm`
     """
     if request.method == "POST":
 
@@ -79,7 +108,14 @@ def comment_edit(request, slug, comment_id):
 
 def comment_delete(request, slug, comment_id):
     """
-    view to delete comment
+    Delete an individual comment.
+
+    **Context**
+
+    ``post``
+        An instance of :model:`post.UserPost`.
+    ``comment``
+        A single comment related to the post.
     """
     queryset = UserPost.objects.all()
     post = get_object_or_404(queryset, slug=slug)

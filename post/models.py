@@ -4,6 +4,9 @@ from cloudinary.models import CloudinaryField
 # Create your models here.
 
 class UserPost(models.Model):
+    """
+    Stores a single user post entry related to :model:`auth.User`.
+    """
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_posts")
@@ -18,6 +21,10 @@ class UserPost(models.Model):
         return f"{self.title} | by: {self.author}"
 
 class Comment(models.Model):
+    """
+    Stores a single comment entry related to :model:`auth.User`
+    and :model:`post.UserPost`.
+    """
     post = models.ForeignKey(
         UserPost, on_delete=models.CASCADE, related_name="comments")
     author = models.ForeignKey(

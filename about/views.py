@@ -4,7 +4,22 @@ from .models import About
 from .forms import FeedbackForm
 # Create your views here.
 
-def about_me(request):
+def about_text(request):
+    """
+    Renders the most recent information on the website author
+    and allows user feedback submission.
+
+    Displays an individual instance of :model:`about.About`.
+
+    **Context**
+    ``about``
+        The most recent instance of :model:`about.About`.
+    ``collaborate_form``
+        An instance of :form:`about.CollaborateForm`.
+    
+    **Template**
+    :template:`about/about.html`
+    """
     if request.method == "POST":
         feedback_form = FeedbackForm(data=request.POST)
         if feedback_form.is_valid():
