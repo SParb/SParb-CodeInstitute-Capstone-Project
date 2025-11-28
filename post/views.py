@@ -1,9 +1,9 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import UserPost, Comment
-from .forms import CommentForm
+from .forms import CommentForm, UserPostForm
 # Create your views here.
 
 class PostList(generic.ListView):
@@ -59,8 +59,7 @@ def post_detail(request, slug):
             comment.save()
             messages.add_message(
             request, messages.SUCCESS,
-            'Comment submitted and awaiting approval'
-        )
+            'Comment submitted and awaiting approval')
 
     comment_form = CommentForm()
 
@@ -74,6 +73,20 @@ def post_detail(request, slug):
             "comment_form": comment_form,
         },
     )    
+def create_post(request):
+    if request.method == 'POST':
+        create_post_form = UserPostForm(request.POST)
+        if create_post_form.is_valid():
+            post = create_post_form.save(commit=False)
+            post.author = request.user
+            post.save()
+            messages.add_message(
+            request, messages.SUCCESS,
+            'Comment submitted and awaiting approval')
+            return redirect('home')  # Change to your posts list view
+        
+    create_post_form= UserPostForm()
+    return render(request, 'post/create_post.html', {'form': create_post_form})
 
 def comment_edit(request, slug, comment_id):
     """
