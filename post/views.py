@@ -73,7 +73,7 @@ def post_detail(request, slug):
             "comment_form": comment_form,
         },
     )    
-def create_post(request):
+def create_post(request): 
     if request.method == 'POST':
         create_post_form = UserPostForm(request.POST)
         if create_post_form.is_valid():
@@ -82,7 +82,7 @@ def create_post(request):
             post.save()
             messages.add_message(
             request, messages.SUCCESS,
-            'Comment submitted and awaiting approval')
+            'Post submitted and awaiting approval')
             return redirect('home')  # Change to your posts list view
         
     create_post_form= UserPostForm()
