@@ -1,13 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
-  {% if user.is_authenticated %}
-  <h2>Create Post</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Post</button>
-  </form>
-  {% else %}
-  <p>Log in to create a post</p>
-  {% endif %}
+{% load crispy_forms_tags %}
+
+<div class="row">
+  <div class="col-md-4 align-self-center mx-auto mb-4">
+    {% if user.is_authenticated %}
+    <h2>Create Post</h2>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ create_post_form|crispy }}
+      <button type="submit" class="btn btn-primary">Post</button>
+    </form>
+    {% else %}
+    <p>Log in to create a post</p>
+    {% endif %}
+  </div>
+</div>
+
 {% endblock content%}

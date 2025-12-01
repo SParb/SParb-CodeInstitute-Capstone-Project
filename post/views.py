@@ -75,7 +75,7 @@ def post_detail(request, slug):
     )    
 def create_post(request): 
     if request.method == 'POST':
-        create_post_form = UserPostForm(request.POST)
+        create_post_form = UserPostForm(request.POST, request.FILES)
         if create_post_form.is_valid():
             post = create_post_form.save(commit=False)
             post.author = request.user
@@ -86,7 +86,7 @@ def create_post(request):
             return redirect('home')  # Change to your posts list view
         
     create_post_form= UserPostForm()
-    return render(request, 'post/create_post.html', {'form': create_post_form})
+    return render(request, 'post/create_post.html', {'create_post_form': create_post_form,},)
 
 def comment_edit(request, slug, comment_id):
     """

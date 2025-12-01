@@ -11,7 +11,7 @@ class UserPost(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_posts")
     featured_image = CloudinaryField('image', default='placeholder')
-    approved = models.BooleanField(default=False)
+    approved = models.BooleanField(default=False)# Only True for fasting testing
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
