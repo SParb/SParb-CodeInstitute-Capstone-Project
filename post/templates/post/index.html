@@ -13,13 +13,13 @@
 
                 <div class="col-md-4">
                     <div class="card mb-4">
-                        <div class="card-body">
+                        <a href="{% url 'post_detail' userpost.slug %}"><div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in userpost.featured_image.url %}
-                                <img class="card-img-top" src="{% static 'images/default_cat.webp' %}"
+                                <img class="card-img-top image_image" src="{% static 'images/default_cat.webp' %}"
                                     alt="placeholder image">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ userpost.featured_image.url }}" alt="{{ userpost.title }}">
+                                <img class="card-img-top image_image" src=" {{ userpost.featured_image.url }}" alt="{{ userpost.title }}">
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author">By: {{ userpost.author }} - {{ userpost.created_on}}</p>
@@ -29,7 +29,7 @@
                                 <h2 class="card-title">{{ userpost.title }}</h2>
                             </a>
                             </p>
-                        </div>
+                        </div></a>
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:3 %}
