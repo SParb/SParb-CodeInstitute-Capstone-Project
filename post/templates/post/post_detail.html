@@ -22,7 +22,9 @@
         </div>
     </div>
 </div>
-
+{% if user.is_authenticated and userpost.author == user %}
+<button class="btn">Delete</button>
+{% endif %}
 
 <div class="container">
     <div class="row">

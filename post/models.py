@@ -3,6 +3,14 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 # Create your models here.
 
+PET_TYPES = [
+    ('cat', 'Cat'),
+    ('dog', 'Dog'),
+    ('bird', 'Bird'),
+    ('rabbit', 'Rabbit'),
+    ('other', 'Other'),
+]
+
 class UserPost(models.Model):
     """
     Stores a single user post entry related to :model:`auth.User`.
@@ -11,6 +19,7 @@ class UserPost(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_posts")
     featured_image = CloudinaryField('image', default='placeholder')
+    pet_type = models.CharField(max_length=10, choices=PET_TYPES, default='other')
     approved = models.BooleanField(default=True)# Only True for fasting testing
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)

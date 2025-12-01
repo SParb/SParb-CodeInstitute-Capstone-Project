@@ -1,6 +1,6 @@
 body {
     background-color: #F9FAFC;
-    padding-top: 50px
+    padding-top: 70px
 }
 
 .brand {
@@ -28,6 +28,17 @@ body {
 
 .main-bg {
     background-color: #F9FAFC;
+}
+
+.navbar{
+    border-bottom: 1px black solid;
+}
+.navbar li{
+    transition: 0.3s;
+    border-radius: 15px;
+}
+.navbar li:hover {
+    background-color: gray;
 }
 
 .card {
@@ -64,49 +75,16 @@ body {
     text-transform: uppercase;
 }
 
-.masthead {
-    margin-top: 10px;
-    overflow: hidden;
-    position: relative;
-    display: inline-block;
-    height: 33vh;
-    width: 100%;
-}
-
-.masthead-text {
-    background-color: #445261;
-    color: white;
-    position: relative;
-}
-
-.masthead-image {
-    position: relative;
-    overflow: hidden;
-}
-
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
-    z-index: 100;
-}
-
 .post-link {
     text-decoration: none;
     color: #445261;
+    border-radius: 10px;
+    transition: 0.3s;
 }
 
 .post-link:hover{
-    color: #445261;
     background-color: gray;
-    border-radius: 10px;
+    color: #445261;
 }
 
 .page-link {

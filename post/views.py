@@ -73,11 +73,25 @@ def post_detail(request, slug):
             "comment_form": comment_form,
         },
     )    
-def create_post(request): 
+def post_create(request):
+    """
+    Create an instance of :model:`post.UserPost`.
+
+    **Context**
+
+    ``post``
+        An instance of :model:`post.UserPost`.
+    ``post_create_form``
+        An instance of :form:`post.UserPostForm`
+
+    **Template:**
+
+    :template:`post/post_create.html`
+    """
     if request.method == 'POST':
-        create_post_form = UserPostForm(request.POST, request.FILES)
-        if create_post_form.is_valid():
-            post = create_post_form.save(commit=False)
+        post_create_form = UserPostForm(request.POST, request.FILES)
+        if post_create_form.is_valid():
+            post = post_create_form.save(commit=False)
             post.author = request.user
             post.save()
             messages.add_message(
@@ -85,8 +99,8 @@ def create_post(request):
             'Post submitted and awaiting approval')
             return redirect('home')  # Change to your posts list view
         
-    create_post_form= UserPostForm()
-    return render(request, 'post/create_post.html', {'create_post_form': create_post_form,},)
+    post_create_form= UserPostForm()
+    return render(request, 'post/post_create.html', {'post_create_form': post_create_form,},)
 
 def comment_edit(request, slug, comment_id):
     """
@@ -130,8 +144,6 @@ def comment_delete(request, slug, comment_id):
     ``comment``
         A single comment related to the post.
     """
-    queryset = UserPost.objects.all()
-    post = get_object_or_404(queryset, slug=slug)
     comment = get_object_or_404(Comment, pk=comment_id)
 
     if comment.author == request.user:
@@ -141,3 +153,23 @@ def comment_delete(request, slug, comment_id):
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+def post_delete(request, slug):
+    """
+    Delete a post.
+
+    **Context**
+
+    ``post``
+        An instance of :model:`post.UserPost`.
+    ``comment``
+        A single comment related to the post.
+    """
+    post = get_object_or_404(UserPost, slug=slug)
+    if post.author == request.user:
+        post.delete()
+        messages.add_message(request, messages.SUCCESS, 'Post deleted!')
+        
+    else:
+        messages.add_message(request, messages.ERROR, 'You can only delete your own posts!')
+    return redirect('home')

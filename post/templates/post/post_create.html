@@ -8,7 +8,7 @@
     <h2>Create Post</h2>
     <form method="post" enctype="multipart/form-data">
       {% csrf_token %}
-      {{ create_post_form|crispy }}
+      {{ post_create_form|crispy }}
       <button type="submit" class="btn btn-primary">Post</button>
     </form>
     {% else %}
