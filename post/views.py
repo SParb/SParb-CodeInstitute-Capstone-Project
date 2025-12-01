@@ -25,7 +25,7 @@ class PostList(generic.ListView):
     template_name = "post/index.html"
     paginate_by = 6
 
-def post_detail(request, slug):
+def post_detail(request, post_id):
     """
     Display an individual :model:`post.UserPost`.
 
@@ -46,7 +46,7 @@ def post_detail(request, slug):
     """
 
     queryset = UserPost.objects.all()
-    post = get_object_or_404(queryset, slug=slug)
+    post = get_object_or_404(queryset, id=post_id)
     comments = post.comments.all().order_by("-created_on")
     comment_count = post.comments.filter(approved=True).count()
 
@@ -102,7 +102,7 @@ def post_create(request):
     post_create_form= UserPostForm()
     return render(request, 'post/post_create.html', {'post_create_form': post_create_form,},)
 
-def comment_edit(request, slug, comment_id):
+def comment_edit(request, post_id, comment_id):
     """
     Display an individual comment for edit.
 
@@ -118,7 +118,7 @@ def comment_edit(request, slug, comment_id):
     if request.method == "POST":
 
         queryset = UserPost.objects.all()
-        post = get_object_or_404(queryset, slug=slug)
+        post = get_object_or_404(queryset, post_id=post_id)
         comment = get_object_or_404(Comment, pk=comment_id)
         comment_form = CommentForm(data=request.POST, instance=comment)
 
@@ -131,9 +131,9 @@ def comment_edit(request, slug, comment_id):
         else:
             messages.add_message(request, messages.ERROR, 'Error updating comment!')
 
-    return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+    return HttpResponseRedirect(reverse('post_detail', args=[post_id]))
 
-def comment_delete(request, slug, comment_id):
+def comment_delete(request, post_id, comment_id):
     """
     Delete an individual comment.
 
@@ -152,9 +152,9 @@ def comment_delete(request, slug, comment_id):
     else:
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
-    return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+    return HttpResponseRedirect(reverse('post_detail', args=[post_id]))
 
-def post_delete(request, slug):
+def post_delete(request, post_id):
     """
     Delete a post.
 
@@ -165,7 +165,7 @@ def post_delete(request, slug):
     ``comment``
         A single comment related to the post.
     """
-    post = get_object_or_404(UserPost, slug=slug)
+    post = get_object_or_404(UserPost, id=post_id)
     if post.author == request.user:
         post.delete()
         messages.add_message(request, messages.SUCCESS, 'Post deleted!')

@@ -16,7 +16,6 @@ class UserPost(models.Model):
     Stores a single user post entry related to :model:`auth.User`.
     """
     title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_posts")
     featured_image = CloudinaryField('image', default='placeholder')
     pet_type = models.CharField(max_length=10, choices=PET_TYPES, default='other')
