@@ -31,7 +31,7 @@ body {
 }
 
 .navbar{
-    border-bottom: 1px black solid;
+    border-bottom: 2px black solid;
 }
 .navbar li{
     transition: 0.3s;
@@ -44,6 +44,10 @@ body {
 .card {
     border: none;
     background-color: transparent;
+}
+
+.card-title{
+    border-bottom: 1px solid black;
 }
 
 .image-container {
@@ -62,6 +66,7 @@ body {
     min-width: 30%;
     left: -2px;
     background-color: #188181;
+    border-radius: 4px;
 }
 
 .scale {
@@ -78,17 +83,19 @@ body {
 .post-link {
     text-decoration: none;
     color: #445261;
-    border-radius: 10px;
     transition: 0.3s;
+    border-bottom: 2px solid black;
+}
+
+#postDelete {
+    margin-left: auto;
+    margin-right: 20px;
+    display: block;
 }
 
 .post-link:hover{
-    background-color: gray;
+    background-color: wheat;
     color: #445261;
-}
-
-.page-link {
-    color: #E84610;
 }
 
 .post-title {
@@ -100,7 +107,6 @@ body {
     margin-left: 10%;
 }
 .post-info {
-    margin-top: 5%;
     border-radius: 10px;
 }
 
