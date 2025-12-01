@@ -2,10 +2,12 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-
+{% if user.is_authenticated and userpost.author == user %}
+<button class="btn btn-danger" id="postDelete" post_id="{{userpost.id}}">Delete post</button>
+{% endif %}
 <div class="container">
     <div class="row">
-        <div class="col-12 post-info">
+        <div class="col-12 deleteCommentModal">
             <h1 class="post-title">{{ userpost.title }}</h1>
             <p class="post-subtitle">{{ userpost.author }} | {{ userpost.created_on }}</p>
         </div>
@@ -22,10 +24,6 @@
         </div>
     </div>
 </div>
-{% if user.is_authenticated and userpost.author == user %}
-<button class="btn" id="postDelete" post_id="{{userpost.id}}">Delete</button>
-{% endif %}
-
 <div class="container">
     <div class="row">
         <div class="col card mb-4  mt-3 left ">
@@ -52,7 +50,7 @@
         <div class="card-body">
             {% if user.is_authenticated %}
             <h3>Leave a comment:</h3>
-            <p>Posting as: {{ user.username }}</p>
+            <p>Commenting as: {{ user.username }}</p>
             <form id="commentForm" method="post" style="margin-top: 1.3em;">
                 {{ comment_form | crispy }}
                 {% csrf_token %}

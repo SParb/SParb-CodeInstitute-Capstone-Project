@@ -62,6 +62,7 @@ body {
     min-width: 30%;
     left: -2px;
     background-color: #188181;
+    border-radius: 4px;
 }
 
 .scale {
@@ -82,13 +83,15 @@ body {
     transition: 0.3s;
 }
 
-.post-link:hover{
-    background-color: gray;
-    color: #445261;
+#postDelete {
+    margin-left: auto;
+    margin-right: 20px;
+    display: block;
 }
 
-.page-link {
-    color: #E84610;
+.post-link:hover{
+    background-color: wheat;
+    color: #445261;
 }
 
 .post-title {
@@ -100,7 +103,6 @@ body {
     margin-left: 10%;
 }
 .post-info {
-    margin-top: 5%;
     border-radius: 10px;
 }
 
