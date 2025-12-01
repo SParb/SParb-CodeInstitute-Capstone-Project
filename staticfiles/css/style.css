@@ -1,5 +1,6 @@
 body {
     background-color: #F9FAFC;
+    padding-top: 70px
 }
 
 .brand {
@@ -29,6 +30,17 @@ body {
     background-color: #F9FAFC;
 }
 
+.navbar{
+    border-bottom: 1px black solid;
+}
+.navbar li{
+    transition: 0.3s;
+    border-radius: 15px;
+}
+.navbar li:hover {
+    background-color: gray;
+}
+
 .card {
     border: none;
     background-color: transparent;
@@ -36,6 +48,12 @@ body {
 
 .image-container {
     position: relative;
+}
+
+.image_image{
+    height: 300px;
+    object-fit: contain;
+    width: 100%;
 }
 
 .image-flash {
@@ -57,58 +75,40 @@ body {
     text-transform: uppercase;
 }
 
-.masthead {
-    margin-top: 10px;
-    overflow: hidden;
-    position: relative;
-    display: inline-block;
-    height: 33vh;
-    width: 100%;
-}
-
-.masthead-text {
-    background-color: #445261;
-    color: white;
-    position: relative;
-}
-
-.masthead-image {
-    position: relative;
-    overflow: hidden;
-}
-
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
-    z-index: 100;
-}
-
 .post-link {
     text-decoration: none;
     color: #445261;
+    border-radius: 10px;
+    transition: 0.3s;
 }
 
-.post-link:hover,
+.post-link:hover{
+    background-color: gray;
+    color: #445261;
+}
+
 .page-link {
     color: #E84610;
 }
 
 .post-title {
-    margin-top: 10%;
-    margin-left: 5%;
+    margin-top: 2%;
+    margin-left: 10%;
+}   
+.post-subtitle{
+    margin-bottom: 2%;
+    margin-left: 10%;
+}
+.post-info {
+    margin-top: 5%;
+    border-radius: 10px;
 }
 
-.post-subtitle {
-    margin-left: 5%;
-    color: lightgray;
+.post-image{
+    margin-top: 10px;
+    object-fit: contain; 
+    max-height: 500px;  
+    background: #fff;
 }
 
 .btn-signup,
