@@ -37,9 +37,6 @@ body {
 
 .image-container {
     position: relative;
-    border: gray solid 2px;
-    border-radius: 5px;
-    background-color: gray;
 }
 
 .image_image{
@@ -106,19 +103,34 @@ body {
     color: #445261;
 }
 
-.post-link:hover,
+.post-link:hover{
+    color: #445261;
+    background-color: gray;
+    border-radius: 10px;
+}
+
 .page-link {
     color: #E84610;
 }
 
 .post-title {
-    margin-top: 10%;
-    margin-left: 5%;
+    margin-top: 2%;
+    margin-left: 10%;
+}   
+.post-subtitle{
+    margin-bottom: 2%;
+    margin-left: 10%;
+}
+.post-info {
+    margin-top: 5%;
+    border-radius: 10px;
 }
 
-.post-subtitle {
-    margin-left: 5%;
-    color: lightgray;
+.post-image{
+    margin-top: 10px;
+    object-fit: contain; 
+    max-height: 500px;  
+    background: #fff;
 }
 
 .btn-signup,
