@@ -4,7 +4,7 @@ from django.test import TestCase
 from .forms import CommentForm
 from .models import UserPost
 
-class TestBlogViews(TestCase):
+class TestPostViews(TestCase):
 
     def setUp(self):
         self.user = User.objects.create_superuser(
@@ -12,17 +12,14 @@ class TestBlogViews(TestCase):
             password="myPassword",
             email="test@test.com"
         )
-        self.post = UserPost(title="Blog title", author=self.user,
-                         post_id="blog-title",
-                         content="Blog content")
+        self.post = UserPost(title="Post title", author=self.user, content="Post content")
         self.post.save()
 
     def test_render_post_detail_page_with_comment_form(self):
-        response = self.client.get(reverse(
-            'post_detail', args=['blog-title']))
+        response = self.client.get(reverse('post_detail', args=[self.post.id]))
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b"Blog title", response.content)
-        self.assertIn(b"Blog content", response.content)
+        self.assertIn(b"Post title", response.content)
+        self.assertIn(b"Post content", response.content)
         self.assertIsInstance(
             response.context['comment_form'], CommentForm)
         
@@ -33,8 +30,7 @@ class TestBlogViews(TestCase):
         post_data = {
             'body': 'This is a test comment.'
         }
-        response = self.client.post(reverse(
-            'post_detail', args=['blog-title']), post_data)
+        response = self.client.post(reverse('post_detail', args=[self.post.id]), post_data)
         self.assertEqual(response.status_code, 200)
         self.assertIn(
             b'Comment submitted and awaiting approval',
