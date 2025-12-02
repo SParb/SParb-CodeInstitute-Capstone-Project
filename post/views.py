@@ -24,6 +24,13 @@ class PostList(generic.ListView):
     queryset = UserPost.objects.filter(approved=True)
     template_name = "post/index.html"
     paginate_by = 6
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        for post in context['object_list']:
+            post.comment_count = post.comments.filter(approved=True).count()
+        return context
+
+
 
 def post_detail(request, post_id):
     """

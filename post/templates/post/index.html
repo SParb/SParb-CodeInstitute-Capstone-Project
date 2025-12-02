@@ -12,7 +12,7 @@
                 {% for userpost in userpost_list %}
 
                 <div class="col-md-4">
-                    <div class="card mb-4">
+                    <div class="card">
                         <a href="{% url 'post_detail' userpost.id %}" class="post-link">
                             <div class="card-body">
                                 <p class="author">By: {{ userpost.author }}</p>
@@ -27,9 +27,12 @@
                                         alt="{{ userpost.title }}">
                                     {% endif %}
                                 </div>
-                                </p>
+                                <strong class="comment-count">
+                                    <i class="far fa-comments"></i> {{ userpost.comment_count }}
+                                </strong>
                             </div>
                         </a>
+                        <span class="card-bottom"></span>
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:3 %}
