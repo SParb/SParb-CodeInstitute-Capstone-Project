@@ -19,7 +19,7 @@ class UserPost(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_posts")
     featured_image = CloudinaryField('image', default='placeholder')
     pet_type = models.CharField(max_length=10, choices=PET_TYPES, default='other')
-    approved = models.BooleanField(default=False)# Only True for fasting testing
+    approved = models.BooleanField(default=True)# Only True for fasting testing
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
