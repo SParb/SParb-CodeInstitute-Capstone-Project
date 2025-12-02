@@ -87,6 +87,8 @@ As a **registered user** I can **see that my comment or post was submitted succe
 <br/><br/>
 Acceptance criteria
 - If the registered user submits a comment or post, there should be some kind of confirmation message for the user.
+
+- If the registered user deletes or edits a comment or post, there should be some kind of confirmation message for the user.
 ----
 ### Could Have
 ----
