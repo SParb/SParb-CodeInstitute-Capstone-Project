@@ -5,6 +5,9 @@
 {% if user.is_authenticated and userpost.author == user %}
 <button class="btn btn-danger" id="postDelete" post_id="{{userpost.id}}">Delete post</button>
 {% endif %}
+{% if user.is_authenticated and userpost.author == user %}
+<button class="btn btn-danger" id="postEdit" post_id="{{userpost.id}}">Edit post</button>
+{% endif %}
 <div class="container">
     <div class="row">
         <div class="col-12 deleteCommentModal">

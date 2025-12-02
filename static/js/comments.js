@@ -15,7 +15,7 @@ const deleteConfirm = document.getElementById("deleteConfirm");
 * - Fetches the content of the corresponding comment.
 * - Populates the `commentText` input/textarea with the comment's content for editing.
 * - Updates the submit button's text to "Update".
-* - Sets the form's action attribute to the `edit_comment/{commentId}` endpoint.
+* - Sets the form's action attribute to the `edit-comment/{commentId}` endpoint.
 */
 for (let button of editButtons) {
   button.addEventListener("click", (e) => {
@@ -24,7 +24,7 @@ for (let button of editButtons) {
     let commentContent = document.getElementById(`comment${commentId}`).innerText;
     commentText.value = commentContent;
     submitButton.innerText = "Update";
-    commentForm.setAttribute("action", `edit_comment/${commentId}`);
+    commentForm.setAttribute("action", `edit-comment/${commentId}`);
   });
 }
 /**
@@ -40,7 +40,7 @@ for (let button of editButtons) {
 for (let button of deleteButtons) {
   button.addEventListener("click", (e) => {
     let commentId = e.target.getAttribute("comment_id");
-    deleteConfirm.href = `delete_comment/${commentId}`;
+    deleteConfirm.href = `delete-comment/${commentId}`;
     deleteModal.show();
   });
 }

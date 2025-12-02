@@ -12,3 +12,4 @@ class UserPostForm(forms.ModelForm):
     class Meta:
         model = UserPost
         fields = ['title', 'pet_type', 'featured_image', 'content']
+

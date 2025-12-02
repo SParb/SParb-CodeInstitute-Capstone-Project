@@ -58,8 +58,7 @@ def post_detail(request, post_id):
             comment.post = post
             comment.save()
             messages.add_message(
-            request, messages.SUCCESS,
-            'Comment submitted and awaiting approval')
+            request, messages.SUCCESS, 'Comment submitted and awaiting approval.')
 
     comment_form = CommentForm()
 
@@ -95,8 +94,7 @@ def post_create(request):
             post.author = request.user
             post.save()
             messages.add_message(
-            request, messages.SUCCESS,
-            'Post submitted and awaiting approval')
+            request, messages.SUCCESS, 'Post submitted and awaiting approval.')
             return redirect('home')  # Change to your posts list view
         
     post_create_form= UserPostForm()
@@ -127,9 +125,9 @@ def comment_edit(request, post_id, comment_id):
             comment.post = post
             comment.approved = False
             comment.save()
-            messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
+            messages.add_message(request, messages.SUCCESS, 'Comment updated and awaiting approval.')
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating comment!')
+            messages.add_message(request, messages.ERROR, 'Error updating comment.')
 
     return HttpResponseRedirect(reverse('post_detail', args=[post_id]))
 
@@ -148,12 +146,28 @@ def comment_delete(request, post_id, comment_id):
 
     if comment.author == request.user:
         comment.delete()
-        messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
+        messages.add_message(request, messages.SUCCESS, 'Comment deleted.')
     else:
-        messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
+        messages.add_message(request, messages.ERROR, 'You can only delete your own comments.')
 
     return HttpResponseRedirect(reverse('post_detail', args=[post_id]))
 
+def post_edit(request, post_id):
+    post = get_object_or_404(UserPost, id=post_id)
+    if request.method == 'POST':
+        post_edit_form = UserPostForm(request.POST, request.FILES, instance=post)
+        if post_edit_form.is_valid():
+            post = post_edit_form.save(commit=False)
+            #post.approved = False  # Sets the approval back to false. Uncomment when not testing
+            post.save()
+            messages.add_message(request, messages.SUCCESS, 'Post updated and awaiting approval.')
+            return redirect('post_detail', post_id=post.id)
+    else:
+        post_edit_form = UserPostForm(instance=post)
+    return render(request, 'post/post_edit.html', {
+        'post_edit_form': post_edit_form,
+        'userpost': post,
+    })
 def post_delete(request, post_id):
     """
     Delete a post.
