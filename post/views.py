@@ -116,7 +116,7 @@ def comment_edit(request, post_id, comment_id):
     if request.method == "POST":
 
         queryset = UserPost.objects.all()
-        post = get_object_or_404(queryset, post_id=post_id)
+        post = get_object_or_404(queryset, id=post_id)
         comment = get_object_or_404(Comment, pk=comment_id)
         comment_form = CommentForm(data=request.POST, instance=comment)
 
@@ -182,8 +182,8 @@ def post_delete(request, post_id):
     post = get_object_or_404(UserPost, id=post_id)
     if post.author == request.user:
         post.delete()
-        messages.add_message(request, messages.SUCCESS, 'Post deleted!')
+        messages.add_message(request, messages.SUCCESS, 'Post deleted.')
         
     else:
-        messages.add_message(request, messages.ERROR, 'You can only delete your own posts!')
+        messages.add_message(request, messages.ERROR, 'You can only delete your own posts.')
     return redirect('home')
