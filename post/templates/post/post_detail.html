@@ -2,6 +2,7 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
+{% if userpost.approved == True%}
 {% if user.is_authenticated and userpost.author == user %}
 <button class="btn btn-danger" id="postDelete" post_id="{{userpost.id}}">Delete post</button>
 {% endif %}
@@ -137,6 +138,9 @@
     </div>
   </div>
 </div>
+{% else %}
+<p>This post has not been approved sorry, please come back later.</p>
+{% endif %}
 {% endblock content %}
 {% block extras %}
 <script src="{% static 'js/comments.js' %}"></script>
