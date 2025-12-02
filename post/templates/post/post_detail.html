@@ -138,8 +138,10 @@
         </div>
     </div>
 </div>
-{% else %}
+{% elif userpost.approved == False %}
 <p>This post has not been approved sorry, please come back later.</p>
+{%else%}
+<p>Sorry this post has been deleted or does not exist.</p>
 {% endif %}
 {% endblock content %}
 {% block extras %}

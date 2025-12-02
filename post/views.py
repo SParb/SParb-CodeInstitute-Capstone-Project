@@ -52,10 +52,17 @@ def post_detail(request, post_id):
     :template:`post/post_detail.html`
     """
 
-    queryset = UserPost.objects.all()
-    post = get_object_or_404(queryset, id=post_id)
-    comments = post.comments.all().order_by("-created_on")
-    comment_count = post.comments.filter(approved=True).count()
+    try:
+        post = UserPost.objects.get(id=post_id)
+        comments = post.comments.all().order_by("-created_on")
+        comment_count = post.comments.filter(approved=True).count()
+        comment_form = CommentForm()
+        # ...any other logic for existing posts...
+    except UserPost.DoesNotExist:
+        post = None
+        comments = []
+        comment_count = 0
+        comment_form = CommentForm()
 
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
@@ -68,7 +75,7 @@ def post_detail(request, post_id):
             request, messages.SUCCESS, 'Comment submitted and awaiting approval.')
 
     comment_form = CommentForm()
-
+    
     return render(
         request,
         "post/post_detail.html",
