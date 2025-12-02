@@ -1,33 +1,16 @@
+:root {
+  --primary--color: #353535;
+  --secondary-color: #ffffff;
+  --tertiary-color:#d2d7df;
+  --quaternary-color:#bdbbb0;
+  --quinary-color:#8a897c;
+}
+
+/*base.html*/
+
 body {
-    background-color: #F9FAFC;
+    background-color: var(--secondary-color);
     padding-top: 70px
-}
-
-.brand {
-    font-family: Lato, sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #4A4A4F;
-}
-
-.red-o {
-    color: #E84610;
-}
-
-.thin {
-    font-weight: 300;
-}
-
-.light-bg {
-    background-color: #fff;
-}
-
-.dark-bg {
-    background-color: #445261;
-}
-
-.main-bg {
-    background-color: #F9FAFC;
 }
 
 .navbar{
@@ -41,43 +24,25 @@ body {
     background-color: gray;
 }
 
+/*index.html*/
+
 .card {
     border: none;
     background-color: transparent;
 }
 
 .card-title{
-    border-bottom: 1px solid black;
+     border-bottom: 1px solid black
 }
 
 .image-container {
     position: relative;
 }
 
-.image_image{
+.post-image{
     height: 300px;
     object-fit: contain;
     width: 100%;
-}
-
-.image-flash {
-    position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #188181;
-    border-radius: 4px;
-}
-
-.scale {
-    width: 100%;
-    height: auto;
-}
-
-.author {
-    color: white;
-    margin: 4px;
-    text-transform: uppercase;
 }
 
 .post-link {
@@ -85,6 +50,21 @@ body {
     color: #445261;
     transition: 0.3s;
     border-bottom: 2px solid black;
+}
+
+/*post_detail.html*/
+
+.post-detail-image{
+    width: 80%;
+}
+
+
+.author {
+    margin-bottom: 2px;
+}
+
+.created-on{
+    margin-bottom: 2px;
 }
 
 #postEdit,
@@ -100,23 +80,23 @@ body {
     color: #445261;
 }
 
-.post-title {
+.post-title,
+.post-detail-title{
     margin-top: 2%;
     margin-left: 10%;
 }   
-.post-subtitle{
+.post-author,
+.post-detail-author{
+    margin-top: 2%;
     margin-bottom: 2%;
     margin-left: 10%;
-}
-.post-info {
-    border-radius: 10px;
+    font-size: 150%;
 }
 
-.post-image{
-    margin-top: 10px;
-    object-fit: contain; 
-    max-height: 500px;  
-    background: #fff;
+.post-detail-text{
+    margin-top: 2%;
+    margin-left: 10%;
+    font-size: 150%;
 }
 
 .btn-signup,
