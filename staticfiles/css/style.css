@@ -10,7 +10,7 @@
 
 body {
     background-color: var(--quaternary-color);
-    padding-top: 70px;
+    padding-top: 120px;
     color: var(--primary-color);
 }
 
@@ -24,7 +24,7 @@ body {
     color: var(--secondary-color) !important;
     transition: 0.3s;
     border-radius: 15px;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 .navbar a:hover {
     background-color: var(--tertiary-color);
@@ -36,6 +36,12 @@ body {
 }
 .navbar .navbar-brand:hover {
     background-color: transparent !important;
+}
+
+li i{
+    font-size: 150%;
+    padding-right: 10px;
+    vertical-align: middle;
 }
 
 /*index.html*/
@@ -130,13 +136,12 @@ body {
 }
 
 .link {
-    color: #23BBBB;
-    text-decoration: none;
+    color: #015307;
 }
 
 .link:hover,
 .link:active {
-    color: #445261;
+    color: #003d7e;
     text-decoration: underline;
 }
 

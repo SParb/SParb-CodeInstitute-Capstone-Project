@@ -20,7 +20,7 @@
                                 <h2 class="card-title">{{ userpost.title }}</h2>
                                 <div class="image-container">
                                     {% if "placeholder" in userpost.featured_image.url %}
-                                    <img class="card-img-top post-image" src="{% static 'images/default_cat.webp' %}"
+                                    <img class="card-img-top post-image" src="{% static 'images/pettit_icon.png' %}"
                                         alt="placeholder image">
                                     {% else %}
                                     <img class="card-img-top post-image" src=" {{ userpost.featured_image.url }}"
