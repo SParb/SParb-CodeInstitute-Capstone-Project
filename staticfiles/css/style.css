@@ -14,6 +14,10 @@ body {
     color: var(--primary-color);
 }
 
+main {
+    padding: 0px 50px;
+}
+
 .navbar{
     background-color: var(--primary-color) !important;
     border-bottom: 2px black solid;
@@ -113,7 +117,6 @@ li i{
 
 .post-detail-text{
     margin-top: 2%;
-    margin-left: 10%;
     font-size: 150%;
 }
 
@@ -121,6 +124,19 @@ li i{
     font-size: 170%;
 }
 
+#comments-header{
+    margin-left: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid black;
+}
+.comments-body {
+    font-size: 140%;
+}
+.comments{
+    padding-bottom: 15px !important;
+    padding-left: 0px !important;
+    border-bottom: 1px solid black;
+}
 /*Auth*/
 
 .btn-signup,
