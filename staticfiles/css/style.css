@@ -14,18 +14,10 @@ body {
     color: var(--primary-color);
 }
 
-#pettit-icon {
-    max-height: 100px;
-}
-
-.navbar-brand {
-    padding: 0px 8px 0px 0px !important;
-}
-
 .navbar{
     background-color: var(--primary-color) !important;
     border-bottom: 2px black solid;
-    padding-right: 20px;
+    padding: 0px 20px 0px 0px !important;
 }
 
 .navbar a{
@@ -37,6 +29,13 @@ body {
 .navbar a:hover {
     background-color: var(--tertiary-color);
     color: var(--primary-color) !important;
+}
+
+#pettit-icon {
+    max-height: 80px;
+}
+.navbar .navbar-brand:hover {
+    background-color: transparent !important;
 }
 
 /*index.html*/
