@@ -3,20 +3,23 @@
 {% load crispy_forms_tags %}
 
 {% if userpost.approved == True%}
-{% if user.is_authenticated and userpost.author == user %}
-<button class="btn btn-danger" id="postDelete" post_id="{{userpost.id}}">Delete post</button>
-{% endif %}
-{% if user.is_authenticated and userpost.author == user %}
-<button class="btn btn-danger" id="postEdit" post_id="{{userpost.id}}">Edit post</button>
-{% endif %}
+
 <div class="container">
     <div class="row">
         <div class="post-content">
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-8">
                         <p class="post-detail-author">{{ userpost.author }} | {{ userpost.created_on }}</p>
                         <h1 class="post-detail-title">{{ userpost.title }}</h1>
+                    </div>
+                    <div class="col-4">
+                        {% if user.is_authenticated and userpost.author == user %}
+                        <button class="btn btn-danger" id="postDelete" post_id="{{userpost.id}}">Delete post</button>
+                        {% endif %}
+                        {% if user.is_authenticated and userpost.author == user %}
+                        <button class="btn btn-warning" id="postEdit" post_id="{{userpost.id}}">Edit post</button>
+                        {% endif %}
                     </div>
                 </div>
                 <div class="row">

@@ -30,9 +30,10 @@
 <body class="d-flex flex-column h-100 main-bg">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-md navbar-light bg-white fixed-top">
+    <nav class="navbar navbar-expand-md navbar-dark bg-white fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">Pettit</a>
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'images/pettit_icon.png' %}" alt="Pettit logo" class="img-fluid" id="pettit-icon"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -72,11 +73,11 @@
                     </li>
                     {% endif %}
                 </ul>
-                <span class="navbar-text text-muted">
+                <span class="navbar-text">
                     {% if user.is_authenticated %}
-                    <p class="text-end m-1">You are logged in as {{ user }}</p>
+                    <p class="m-1 login-status">You are logged in as {{ user }}</p>
                     {% else %}
-                    <p class="text-end m-1">You are not logged in</p>
+                    <p class="m-1 login-status">You are not logged in</p>
                     {% endif %} 
                 </span>
             </div>

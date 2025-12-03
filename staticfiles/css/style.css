@@ -1,45 +1,45 @@
+:root {
+  --primary-color: #353535;
+  --secondary-color: #ffffff;
+  --tertiary-color:#d2d7df;
+  --quaternary-color:#bdbbb0;
+  --quinary-color:#8a897c;
+}
+
+/*base.html*/
+
 body {
-    background-color: #F9FAFC;
-    padding-top: 70px
+    background-color: var(--quaternary-color);
+    padding-top: 70px;
+    color: var(--primary-color);
 }
 
-.brand {
-    font-family: Lato, sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #4A4A4F;
+#pettit-icon {
+    max-height: 100px;
 }
 
-.red-o {
-    color: #E84610;
-}
-
-.thin {
-    font-weight: 300;
-}
-
-.light-bg {
-    background-color: #fff;
-}
-
-.dark-bg {
-    background-color: #445261;
-}
-
-.main-bg {
-    background-color: #F9FAFC;
+.navbar-brand {
+    padding: 0px 8px 0px 0px !important;
 }
 
 .navbar{
+    background-color: var(--primary-color) !important;
     border-bottom: 2px black solid;
+    padding-right: 20px;
 }
-.navbar li{
+
+.navbar a{
+    color: var(--secondary-color) !important;
     transition: 0.3s;
     border-radius: 15px;
+    margin-right: 10px;
 }
-.navbar li:hover {
-    background-color: gray;
+.navbar a:hover {
+    background-color: var(--tertiary-color);
+    color: var(--primary-color) !important;
 }
+
+/*index.html*/
 
 .card {
     border: none;
@@ -47,75 +47,76 @@ body {
 }
 
 .card-title{
-    border-bottom: 1px solid black;
+     border-bottom: 1px solid black
 }
 
 .image-container {
     position: relative;
 }
 
-.image_image{
+.post-image{
     height: 300px;
     object-fit: contain;
     width: 100%;
 }
 
-.image-flash {
-    position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #188181;
-    border-radius: 4px;
-}
-
-.scale {
-    width: 100%;
-    height: auto;
-}
-
-.author {
-    color: white;
-    margin: 4px;
-    text-transform: uppercase;
-}
-
 .post-link {
     text-decoration: none;
-    color: #445261;
+    color: var(--primary-color);
     transition: 0.3s;
+    border-radius: 30px;
+}
+
+.card-bottom{
+    margin: 10px 0px;
     border-bottom: 2px solid black;
 }
 
+/*post_detail.html*/
+
+.author {
+    margin-bottom: 2px;
+}
+
+.created-on{
+    margin-bottom: 2px;
+}
+
+#postEdit,
 #postDelete {
     margin-left: auto;
-    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     display: block;
 }
 
 .post-link:hover{
-    background-color: wheat;
+    background-color: var(--tertiary-color);
     color: #445261;
 }
 
-.post-title {
+.post-title,
+.post-detail-title{
     margin-top: 2%;
-    margin-left: 10%;
 }   
-.post-subtitle{
-    margin-bottom: 2%;
-    margin-left: 10%;
-}
-.post-info {
-    border-radius: 10px;
+.post-author,
+.post-detail-author{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 150%;
 }
 
-.post-image{
-    margin-top: 10px;
-    object-fit: contain; 
-    max-height: 500px;  
-    background: #fff;
+.post-detail-text{
+    margin-top: 2%;
+    margin-left: 10%;
+    font-size: 150%;
 }
+
+.comment-count{
+    font-size: 170%;
+}
+
+/*Auth*/
 
 .btn-signup,
 .btn-edit {
@@ -159,9 +160,13 @@ body {
 }
 
 .faded {
-    color: rgb(172, 175, 175);
+    color: var(--primary-color);
 }
 
 .approval {
-    color: rgb(222, 146, 168);
+    color: rgb(212, 57, 101);
+}
+
+footer {
+    background-color: var(--primary-color);
 }

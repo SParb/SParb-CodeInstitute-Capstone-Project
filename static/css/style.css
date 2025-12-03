@@ -17,16 +17,25 @@ body {
 .navbar{
     background-color: var(--primary-color) !important;
     border-bottom: 2px black solid;
+    padding: 0px 20px 0px 0px !important;
 }
 
 .navbar a{
     color: var(--secondary-color) !important;
     transition: 0.3s;
     border-radius: 15px;
+    margin-right: 10px;
 }
 .navbar a:hover {
     background-color: var(--tertiary-color);
     color: var(--primary-color) !important;
+}
+
+#pettit-icon {
+    max-height: 80px;
+}
+.navbar .navbar-brand:hover {
+    background-color: transparent !important;
 }
 
 /*index.html*/
@@ -64,11 +73,6 @@ body {
 
 /*post_detail.html*/
 
-.post-detail-image{
-    width: 80%;
-}
-
-
 .author {
     margin-bottom: 2px;
 }
@@ -80,7 +84,7 @@ body {
 #postEdit,
 #postDelete {
     margin-left: auto;
-    margin-right: 20px;
+    margin-top: 10px;
     margin-bottom: 10px;
     display: block;
 }
@@ -93,13 +97,11 @@ body {
 .post-title,
 .post-detail-title{
     margin-top: 2%;
-    margin-left: 10%;
 }   
 .post-author,
 .post-detail-author{
-    margin-top: 2%;
-    margin-bottom: 2%;
-    margin-left: 10%;
+    margin-top: 10px;
+    margin-bottom: 10px;
     font-size: 150%;
 }
 
