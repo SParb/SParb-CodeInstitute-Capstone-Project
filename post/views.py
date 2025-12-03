@@ -186,7 +186,7 @@ def post_edit(request, post_id):
         post_edit_form = UserPostForm(request.POST, request.FILES, instance=post)
         if post_edit_form.is_valid():
             post = post_edit_form.save(commit=False)
-            #post.approved = False  # Sets the post approval back to false. Uncomment when not testing
+            post.approved = False  # Sets the post approval back to false. Uncomment when not testing
             post.save()
             messages.add_message(request, messages.SUCCESS, 'Post updated and awaiting approval.')
             return redirect('post_detail', post_id=post.id)
