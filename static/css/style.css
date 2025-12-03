@@ -115,6 +115,12 @@ li i{
     font-size: 150%;
 }
 
+.post-detail-image{
+    height: 600px;
+    object-fit: contain;
+    width: 100%;
+}
+
 .post-detail-text{
     margin-top: 2%;
     font-size: 150%;
