@@ -14,6 +14,10 @@ body {
     color: var(--primary-color);
 }
 
+main {
+    padding: 0px 50px;
+}
+
 .navbar{
     background-color: var(--primary-color) !important;
     border-bottom: 2px black solid;

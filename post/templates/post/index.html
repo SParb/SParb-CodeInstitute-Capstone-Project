@@ -3,9 +3,26 @@
 {% block content %}
 
 <!-- index.html content starts here -->
+<form method="get" id="filterForm">
+        <label for="filterByUser">Owner:</label>
+    <select name="filterByUser" id="filterByUser" onchange="document.getElementById('filterForm').submit();">
+        <option value="all" {% if current_user_filter == "all" %}selected{% endif %}>All</option>
+        {% if user.is_authenticated %}
+        <option value="myPosts" {% if current_user_filter == "myPosts" %}selected{% endif %}>My Posts</option>
+        {% endif %}
+    </select>
+    <label for="filterByPetType">Pet type:</label>
+    <select name="filterByPetType" id="filterByPetType" onchange="document.getElementById('filterForm').submit();">
+        <option value="all" {% if current_pet_type == "all" %}selected{% endif %}>All</option>
+        <option value="cat" {% if current_pet_type == "cat" %}selected{% endif %}>Cat</option>
+        <option value="dog" {% if current_pet_type == "dog" %}selected{% endif %}>Dog</option>
+        <option value="bird" {% if current_pet_type == "bird" %}selected{% endif %}>Bird</option>
+        <option value="rabbit" {% if current_pet_type == "rabbit" %}selected{% endif %}>Rabbit</option>
+        <option value="other" {% if current_pet_type == "other" %}selected{% endif %}>Other</option>
+    </select>
+</form>
 <div class="container-fluid">
     <div class="row">
-
         <!-- Post Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">

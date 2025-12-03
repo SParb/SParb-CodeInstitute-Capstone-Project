@@ -24,10 +24,24 @@ class PostList(generic.ListView):
     queryset = UserPost.objects.filter(approved=True)
     template_name = "post/index.html"
     paginate_by = 6
+
+    #determine which posts are shown
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        pet_type = self.request.GET.get('filterByPetType')
+        user_filter = self.request.GET.get('filterByUser')
+        if pet_type and pet_type != 'all':
+            queryset = queryset.filter(pet_type__iexact=pet_type)
+        if user_filter == 'myPosts' and self.request.user.is_authenticated:
+            queryset = queryset.filter(author=self.request.user)
+        return queryset
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         for post in context['object_list']:
             post.comment_count = post.comments.filter(approved=True).count()
+        context['current_pet_type'] = self.request.GET.get('filterByPetType', 'all')
+        context['current_user_filter'] = self.request.GET.get('filterByUser', 'all')
         return context
 
 

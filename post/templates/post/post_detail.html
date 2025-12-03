@@ -25,8 +25,6 @@
                 <div class="row">
                     <div class="col-12 text-center">
                         {% if "placeholder" in userpost.featured_image.url %}
-                        <img class="card-img-top post-detail-image" src="{% static 'images/default_cat.webp' %}"
-                            alt="placeholder image">
                         {% else %}
                         <img class="card-img-top post-detail-image" src=" {{ userpost.featured_image.url }}"
                             alt="{{ userpost.title }}">
