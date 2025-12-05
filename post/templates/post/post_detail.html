@@ -142,10 +142,16 @@
 </div>
 <!-- If post not approved -->
 {% elif userpost.approved == False %}
-<h2>This post has not been approved sorry, please come back later.</h2>
+<div class="container text-center mt-5">
+    <h1>This post has not been approved sorry, please come back later.</h1>
+    <img src="{% static 'images/pettit_icon.png' %}" alt="Pettit icon" class="img-fluid" id="pettit-404">
+  </div>
 <!-- If post has been deleted or doesnt exist -->
 {%else%}
-<h2>Sorry this post has been deleted or does not exist.</h2>
+<div class="container text-center mt-5">
+    <h1>Sorry this post has been deleted or does not exist.</h1>
+    <img src="{% static 'images/pettit_icon.png' %}" alt="Pettit icon" class="img-fluid" id="pettit-404">
+</div>
 {% endif %}
 {% endblock content %}
 {% block extras %}
