@@ -2,8 +2,8 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
+<!-- If post is approved -->
 {% if userpost.approved == True%}
-
 <div class="container">
     <div class="row">
         <div class="post-content">
@@ -13,6 +13,7 @@
                         <p class="post-detail-author">{{ userpost.author }} - {{ userpost.created_on }}</p>
                         <h1 class="post-detail-title">{{ userpost.title }}</h1>
                     </div>
+                    <!-- If user is post author -->
                     <div class="col-4">
                         {% if user.is_authenticated and userpost.author == user %}
                         <button class="btn btn-danger" id="postDelete" post_id="{{userpost.id}}">Delete post</button>
@@ -22,6 +23,7 @@
                         {% endif %}
                     </div>
                 </div>
+                <!-- Post image -->
                 <div class="row">
                     <div class="col-12 text-center">
                         {% if "placeholder" in userpost.featured_image.url %}
@@ -31,6 +33,7 @@
                         {% endif %}
                     </div>
                 </div>
+                <!-- Post content -->
                 <div class="row">
                     <div class="col-12">
                         <p class="post-detail-text">{{ userpost.content | safe}}</p>
@@ -68,12 +71,9 @@
                     <div class="col-lg-8 col-12 card mb-4  mt-3 ">
                         <h3 id="comments-header">Comments:</h3>
                         <div class="card-body">
-                            <!-- We want a for loop inside the empty control tags
-          to iterate through each comment in comments -->
+                            <!-- Comment loop -->
                             {% for comment in comments %}
-                            <div class="p-2 comments
-          {% if not comment.approved and comment.author == user %}
-          faded{% elif not comment.approved %} d-none{% endif %}">
+                            <div class="p-2 comments {% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}">
                                 <p class="font-weight-bold">
                                     {{ comment.author }} -
                                     <span class="font-weight-normal">
@@ -88,12 +88,12 @@
                                     This comment is awaiting approval
                                 </p>
                                 {% endif %}
+                                <!-- If user is the author of a comment -->
                                 {% if user.is_authenticated and comment.author == user %}
                                 <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
                                 <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
                                 {% endif %}
                             </div>
-                            <!-- Our for loop ends here -->
                             {% endfor %}
                         </div>
                     </div>
@@ -139,8 +139,10 @@
         </div>
     </div>
 </div>
+<!-- If post not approved -->
 {% elif userpost.approved == False %}
 <p>This post has not been approved sorry, please come back later.</p>
+<!-- If post has been deleted or doesnt exist -->
 {%else%}
 <p>Sorry this post has been deleted or does not exist.</p>
 {% endif %}

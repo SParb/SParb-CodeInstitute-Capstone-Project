@@ -12,7 +12,7 @@ class TestPostViews(TestCase):
             password="myPassword",
             email="test@test.com"
         )
-        self.post = UserPost(title="Post title", author=self.user, content="Post content")
+        self.post = UserPost(title="Post title", author=self.user, content="Post content", approved=True)
         self.post.save()
 
     def test_render_post_detail_page_with_comment_form(self):
