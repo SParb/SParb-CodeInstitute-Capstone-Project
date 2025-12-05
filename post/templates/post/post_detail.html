@@ -141,10 +141,10 @@
 </div>
 <!-- If post not approved -->
 {% elif userpost.approved == False %}
-<p>This post has not been approved sorry, please come back later.</p>
+<h2>This post has not been approved sorry, please come back later.</h2>
 <!-- If post has been deleted or doesnt exist -->
 {%else%}
-<p>Sorry this post has been deleted or does not exist.</p>
+<h2>Sorry this post has been deleted or does not exist.</h2>
 {% endif %}
 {% endblock content %}
 {% block extras %}

@@ -222,3 +222,7 @@ li i{
 footer {
     background-color: var(--primary-color);
 }
+
+#pettit-404 {
+    height: 400px;
+}

@@ -5,20 +5,24 @@
 <div class="row">
   <div class="col-lg-4 col-md-6 col-8 align-self-center mx-auto mb-4">
     {% if user.is_authenticated %}
-        {% if userpost.author == user %}
-        <h2>Edit Post</h2>
-        <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ post_edit_form|crispy }}
-        <button type="submit" class="btn btn-primary">Post</button>
-        </form>
-        <!-- If not the owner of the post -->
-        {% else %}
-        <p>You cannot edit this post as you are not the owner</p>
-        {% endif %}
+    {% if userpost.author == user %}
+    <h2>Edit Post</h2>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ post_edit_form|crispy }}
+      <button type="submit" class="btn btn-primary">Post</button>
+    </form>
+    <!-- If not the owner of the post -->
+    {% else %}
+    <div class="container text-center mt-5">
+      <h1>You cannot edit this post as you are not the owner</h1>
+    </div>
+    {% endif %}
     <!-- If not logged in -->
     {% else %}
-    <p>Log in to edit a post</p>
+    <div class="container text-center mt-5">
+      <h1><a class="link" href="{{ login_url }}">Log in</a> to edit a post</h1>
+    </div>
     {% endif %}
   </div>
 </div>

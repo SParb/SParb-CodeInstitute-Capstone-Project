@@ -13,7 +13,9 @@
     </form>
     <!-- If not logged in -->
     {% else %}
-    <p><a class="link" href="{{ login_url }}">Log in</a> to create a post</p>
+    <div class="container text-center mt-5">
+      <h1><a class="link" href="{{ login_url }}">Log in</a> to create a post</h1>
+    </div>
     {% endif %}
   </div>
 </div>
