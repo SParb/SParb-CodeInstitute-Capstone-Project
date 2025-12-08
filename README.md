@@ -135,7 +135,7 @@ GitHub Copilot helped with some suggested user stories and grammatical errors.
 
 CSS validation was checked using [W3C CSS Validation Service.](https://jigsaw.w3.org/css-validator/)
 
-![css validation](README_assets\CSS_Validation.jpg)
+![css validation](README_assets/CSS_Validation.jpg)
 
 ### Python
 
