@@ -4,6 +4,7 @@ from .models import About
 from .forms import FeedbackForm
 # Create your views here.
 
+
 def about_text(request):
     """
     Renders the most recent information on the website author
@@ -16,7 +17,7 @@ def about_text(request):
         The most recent instance of :model:`about.About`.
     ``collaborate_form``
         An instance of :form:`about.CollaborateForm`.
-    
+
     **Template**
     :template:`about/about.html`
     """

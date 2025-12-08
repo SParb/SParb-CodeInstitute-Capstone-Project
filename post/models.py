@@ -11,6 +11,7 @@ PET_TYPES = [
     ('other', 'Other'),
 ]
 
+
 class UserPost(models.Model):
     """
     Stores a single user post entry related to :model:`auth.User`.
@@ -19,15 +20,17 @@ class UserPost(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_posts")
     featured_image = CloudinaryField('image', default='placeholder')
     pet_type = models.CharField(max_length=10, choices=PET_TYPES, default='other')
-    approved = models.BooleanField(default=False)# Only True for easier testing
+    approved = models.BooleanField(default=False)  # Only True for easier testing
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ["-created_on"]
+
     def __str__(self):
         return f"{self.title} | by: {self.author}"
+
 
 class Comment(models.Model):
     """

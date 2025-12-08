@@ -14,6 +14,7 @@ class AboutAdmin(SummernoteModelAdmin):
 #       own projects, then inherit from admin.ModelAdmin like
 #       we do below.
 
+
 @admin.register(FeedbackRequest)
 class FeedbackRequestAdmin(admin.ModelAdmin):
 

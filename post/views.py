@@ -17,7 +17,7 @@ class PostList(generic.ListView):
         All published instances of :model:`post.UserPost`
     ``paginate_by``
         Number of posts per page.
-        
+
     **Template:**
 
     :template:`post/index.html`
@@ -28,16 +28,20 @@ class PostList(generic.ListView):
 
     def get_queryset(self):
         """
-        Returns a filtered queryset of :model:`post.UserPost` based on GET parameters.
+        Returns a filtered queryset of :model:`post.UserPost`
+        based on GET parameters.
 
         **Context**
 
         ``queryset``
-            All published instances of :model:`post.UserPost`, filtered by pet type and/or author.
+            All published instances of :model:`post.UserPost`,
+            filtered by pet type and/or author.
         ``pet_type``
-            The pet type to filter posts by, from GET parameter `filterByPetType`.
+            The pet type to filter posts by,
+            from GET parameter `filterByPetType`.
         ``user_filter``
-            The user filter to show only the current user's posts, from GET parameter `filterByUser`.
+            The user filter to show only the current user's posts,
+            from GET parameter `filterByUser`.
 
         **Returns:**
             Queryset of filtered :model:`post.UserPost` objects.
@@ -53,7 +57,8 @@ class PostList(generic.ListView):
 
     def get_context_data(self, **kwargs):
         """
-        Adds extra context (comment count) to the template for :model:`post.UserPost` list view.
+        Adds extra context (comment count) to the
+        template for :model:`post.UserPost` list view.
 
         """
         context = super().get_context_data(**kwargs)
@@ -62,7 +67,6 @@ class PostList(generic.ListView):
         context['current_pet_type'] = self.request.GET.get('filterByPetType', 'all')
         context['current_user_filter'] = self.request.GET.get('filterByUser', 'all')
         return context
-
 
 
 def post_detail(request, post_id):
@@ -104,11 +108,10 @@ def post_detail(request, post_id):
             comment.author = request.user
             comment.post = post
             comment.save()
-            messages.add_message(
-            request, messages.SUCCESS, 'Comment submitted and awaiting approval.')
+            messages.add_message(request, messages.SUCCESS, 'Comment submitted and awaiting approval.')
 
     comment_form = CommentForm()
-    
+
     return render(
         request,
         "post/post_detail.html",
@@ -118,7 +121,9 @@ def post_detail(request, post_id):
             "comment_count": comment_count,
             "comment_form": comment_form,
         },
-    )    
+    )
+
+
 def post_create(request):
     """
     Create an instance of :model:`post.UserPost`.
@@ -140,12 +145,12 @@ def post_create(request):
             post = post_create_form.save(commit=False)
             post.author = request.user
             post.save()
-            messages.add_message(
-            request, messages.SUCCESS, 'Post submitted and awaiting approval.')
+            messages.add_message(request, messages.SUCCESS, 'Post submitted and awaiting approval.')
             return redirect('home')  # Change to your posts list view
-        
-    post_create_form= UserPostForm()
-    return render(request, 'post/post_create.html', {'post_create_form': post_create_form,},)
+
+    post_create_form = UserPostForm()
+    return render(request, 'post/post_create.html', {'post_create_form': post_create_form, },)
+
 
 def comment_edit(request, post_id, comment_id):
     """
@@ -177,6 +182,7 @@ def comment_edit(request, post_id, comment_id):
             messages.add_message(request, messages.ERROR, 'Error updating comment.')
 
     return HttpResponseRedirect(reverse('post_detail', args=[post_id]))
+
 
 def comment_delete(request, post_id, comment_id):
     """
@@ -215,6 +221,8 @@ def post_edit(request, post_id):
         'post_edit_form': post_edit_form,
         'userpost': post,
     })
+
+
 def post_delete(request, post_id):
     """
     Delete a post.
@@ -230,7 +238,7 @@ def post_delete(request, post_id):
     if post.author == request.user:
         post.delete()
         messages.add_message(request, messages.SUCCESS, 'Post deleted.')
-        
+
     else:
         messages.add_message(request, messages.ERROR, 'You can only delete your own posts.')
     return redirect('home')

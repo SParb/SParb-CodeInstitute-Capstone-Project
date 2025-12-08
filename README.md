@@ -157,7 +157,7 @@ Acceptance criteria
 ### Entity Relationship Diagram
 ## UX Design
 ### Colours
-Chosen color palette using [Coolor:](https://coolors.co/)
+Chosen color palette using [Coolor](https://coolors.co/)
 
 ![coolor colour palette](README_assets/coolor.png)
 
