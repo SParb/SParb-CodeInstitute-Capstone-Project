@@ -16,10 +16,10 @@
                     <!-- If user is post author -->
                     <div class="col-4">
                         {% if user.is_authenticated and userpost.author == user %}
-                        <button class="btn btn-danger" id="postDelete" post_id="{{userpost.id}}">Delete post</button>
+                        <button class="btn btn-danger" id="postDelete" data-post-id="{{userpost.id}}">Delete post</button>
                         {% endif %}
                         {% if user.is_authenticated and userpost.author == user %}
-                        <button class="btn btn-warning" id="postEdit" post_id="{{userpost.id}}">Edit post</button>
+                        <button class="btn btn-warning" id="postEdit" data-post-id="{{userpost.id}}">Edit post</button>
                         {% endif %}
                     </div>
                 </div>
@@ -90,8 +90,8 @@
                                 {% endif %}
                                 <!-- If user is the author of a comment -->
                                 {% if user.is_authenticated and comment.author == user %}
-                                <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
-                                <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
+                                <button class="btn btn-edit" data-comment-id="{{ comment.id }}">Edit</button>
+                                <button class="btn btn-delete" data-comment-id="{{ comment.id }}">Delete</button>
                                 {% endif %}
                             </div>
                             {% endfor %}
