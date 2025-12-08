@@ -6,7 +6,7 @@ Pettit is a full stack web application made for my final capstone project at Cod
 
 ## Table of contents
 - [Overview](#overview)
-- [User Stories](#user-stories)
+- [Agile/User Stories](#user-stories)
   - [Must Have](#must-have)
   - [Should Have](#should-have)
   - [Could Have](#could-have)
@@ -27,7 +27,7 @@ Pettit is a full stack web application made for my final capstone project at Cod
 - [Deployment](#deployment)
 - [Credits](#credits)
 
-## User Stories
+## Agile/User Stories
 
 [Project board](https://github.com/users/SParb/projects/10)
 
