@@ -25,8 +25,22 @@ class PostList(generic.ListView):
     template_name = "post/index.html"
     paginate_by = 6
 
-    #determine which posts are shown
     def get_queryset(self):
+        """
+        Returns a filtered queryset of :model:`post.UserPost` based on GET parameters.
+
+        **Context**
+
+        ``queryset``
+            All published instances of :model:`post.UserPost`, filtered by pet type and/or author.
+        ``pet_type``
+            The pet type to filter posts by, from GET parameter `filterByPetType`.
+        ``user_filter``
+            The user filter to show only the current user's posts, from GET parameter `filterByUser`.
+
+        **Returns:**
+            Queryset of filtered :model:`post.UserPost` objects.
+        """
         queryset = super().get_queryset()
         pet_type = self.request.GET.get('filterByPetType')
         user_filter = self.request.GET.get('filterByUser')
@@ -37,6 +51,10 @@ class PostList(generic.ListView):
         return queryset
 
     def get_context_data(self, **kwargs):
+        """
+        Adds extra context (comment count) to the template for :model:`post.UserPost` list view.
+
+        """
         context = super().get_context_data(**kwargs)
         for post in context['object_list']:
             post.comment_count = post.comments.filter(approved=True).count()
@@ -63,7 +81,7 @@ def post_detail(request, post_id):
 
     **Template:**
 
-    :template:`post/post_detail.html`
+    :template:`post_detail.html`
     """
 
     try:
@@ -113,7 +131,7 @@ def post_create(request):
 
     **Template:**
 
-    :template:`post/post_create.html`
+    :template:`post_create.html`
     """
     if request.method == 'POST':
         post_create_form = UserPostForm(request.POST, request.FILES)

@@ -1,6 +1,8 @@
 # Pettit
 ## Overview
-Pettit is a full stack web application made for my final capstone project at Code Institute. It was made using all the skills I learnt during Code Institute primarily using the Django web framework. The main objective of Pettit is to provide users for a way to share images and descriptions of their pets for other users to see and interact with. Questions about their pets can be asked or users can just share cute images of their fuzzy friends to other users.
+<img src="README_assets/pettit_icon.png" alt="pettit logo" width="250"/>
+
+Pettit is a full stack web application made for my final capstone project at Code Institute. It was built using all the skills I learned during Code Institute, primarily with the Django web framework. The main objective of Pettit is to provide users with a way to share images and questions about their pets for other users to see and leave comments on.
 
 ## Table of contents
 - [Overview](#overview)
@@ -17,6 +19,11 @@ Pettit is a full stack web application made for my final capstone project at Cod
 - [Key Features](#key-features)
 - [AI Implementation](#ai-implementation) 
 - [Testing](#testing)
+- [Validation](#validation)
+  - [HTML](#html)
+  - [CSS](#css)
+  - [Python](#python)
+  - [JavaScript](#javascript)
 - [Deployment](#deployment)
 
 ## User Stories
@@ -119,6 +126,20 @@ Chosen color palette using [Coolor:](https://coolors.co/)
 GitHub Copilot helped with some suggested user stories and grammatical errors.
 
 ## Testing
+
+## Validation
+
+### HTML
+
+### CSS
+
+CSS validation was checked using [W3C CSS Validation Service.](https://jigsaw.w3.org/css-validator/)
+
+![css validation](README_assets\CSS_Validation.jpg)
+
+### Python
+
+### JavaScript
 
 ## Deployment
 
