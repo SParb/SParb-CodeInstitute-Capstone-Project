@@ -8,7 +8,7 @@ const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
 const deleteButtons = document.getElementsByClassName("btn-delete");
 const deleteConfirm = document.getElementById("deleteConfirm");
 /**
-* Initializes edit functionality for the provided edit buttons.
+* Initializes comment edit functionality for the provided edit buttons.
 * 
 * For each button in the `editButtons` collection:
 * - Retrieves the associated comment's ID upon click.
@@ -28,7 +28,7 @@ for (let button of editButtons) {
   });
 }
 /**
-* Initializes deletion functionality for the provided delete buttons.
+* Initializes comment deletion functionality for the provided delete buttons.
 * 
 * For each button in the `deleteButtons` collection:
 * - Retrieves the associated comment's ID upon click.

@@ -6,10 +6,11 @@ from .models import UserPost, Comment
 from .forms import CommentForm, UserPostForm
 # Create your views here.
 
+
 class PostList(generic.ListView):
     """
     Returns all published posts in :model:`post.UserPost`
-    and displays them in a page of six posts. 
+    and displays them in a page of six posts.
     **Context**
 
     ``queryset``

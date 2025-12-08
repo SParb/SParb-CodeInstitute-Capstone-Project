@@ -16,7 +16,7 @@ Pettit is a full stack web application made for my final capstone project at Cod
 - [UX Design](#ux-design)
   - [Colours](#colours)
   - [Fonts](#fonts)
-- [Key Features](#key-features)
+- [Features](#features)
 - [AI Implementation](#ai-implementation) 
 - [Testing](#testing)
 - [Validation](#validation)
@@ -25,8 +25,12 @@ Pettit is a full stack web application made for my final capstone project at Cod
   - [Python](#python)
   - [JavaScript](#javascript)
 - [Deployment](#deployment)
+- [Credits](#credits)
 
 ## User Stories
+
+[Project board](https://github.com/users/SParb/projects/10)
+
 ### Must Have
 ----
 **Responsive web design:**
@@ -120,7 +124,7 @@ Acceptance criteria
 Chosen color palette using [Coolor:](https://coolors.co/)
 ### Fonts
 
-## Key Features
+## Features
 
 ## AI Implementation
 GitHub Copilot helped with some suggested user stories and grammatical errors.
@@ -141,6 +145,16 @@ CSS validation was checked using [W3C CSS Validation Service.](https://jigsaw.w3
 
 ### JavaScript
 
+JavaScript validation was checked using [JSHint](https://jshint.com/)
+
+comments.js
+![comments.js validation](README_assets/Comments.js_Validation.jpg)
+
+posts.js
+![posts.js validation](README_assets/Posts.js_Validation.jpg)
+
 ## Deployment
+
+## Credits
 
 [Back to table of contents](#table-of-contents)
