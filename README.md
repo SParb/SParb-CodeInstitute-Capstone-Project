@@ -158,6 +158,9 @@ Acceptance criteria
 ## UX Design
 ### Colours
 Chosen color palette using [Coolor:](https://coolors.co/)
+
+![coolor colour palette](README_assets/coolor.png)
+
 ### Fonts
 
 ## Features
