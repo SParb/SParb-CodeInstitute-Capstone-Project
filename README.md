@@ -185,9 +185,11 @@ CSS validation was checked using [W3C CSS Validation Service.](https://jigsaw.w3
 
 ### Python
 
+Python validation was checked using [Heroku's python linter](https://pep8ci.herokuapp.com/) to ensure the code adheres to PEP8 standards. There are no screenshots included, as there are too many Python files for this README, but every Python file did pass the test.
+
 ### JavaScript
 
-JavaScript validation was checked using [JSHint](https://jshint.com/)
+JavaScript validation was checked using [JSHint.](https://jshint.com/) The only warnings recieved were
 
 <details><summary>comments.js</summary>
 

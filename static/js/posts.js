@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 const editPostButton = document.getElementById("postEdit");
 
 const deletePostButton = document.getElementById("postDelete");

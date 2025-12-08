@@ -12,11 +12,16 @@ class TestPostViews(TestCase):
             password="myPassword",
             email="test@test.com"
         )
-        self.post = UserPost(title="Post title", author=self.user, content="Post content", approved=True)
+        self.post = UserPost(
+            title="Post title",
+            author=self.user,
+            content="Post content",
+            approved=True)
         self.post.save()
 
     def test_render_post_detail_page_with_comment_form(self):
-        response = self.client.get(reverse('post_detail', args=[self.post.id]))
+        response = self.client.get(
+            reverse('post_detail', args=[self.post.id]))
         self.assertEqual(response.status_code, 200)
         self.assertIn(b"Post title", response.content)
         self.assertIn(b"Post content", response.content)
@@ -30,7 +35,8 @@ class TestPostViews(TestCase):
         post_data = {
             'body': 'This is a test comment.'
         }
-        response = self.client.post(reverse('post_detail', args=[self.post.id]), post_data)
+        response = self.client.post(
+            reverse('post_detail', args=[self.post.id]), post_data)
         self.assertEqual(response.status_code, 200)
         self.assertIn(
             b'Comment submitted and awaiting approval',
