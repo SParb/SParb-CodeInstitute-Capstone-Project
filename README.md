@@ -33,20 +33,27 @@ Pettit is a full stack web application made for my final capstone project at Cod
 
 ### Must Have
 ----
-**Responsive web design:**
+<details><summary>Responsive web design:</summary>
+
 As a **user** I can **user the site easily on any screen size** so that **I can have a good user experience**.
 <br/><br/>
 Acceptance criteria
 - Site must be responsive on most Desktop, Laptop and phone screen sizes.
 - Site layout and navigation are user friendly, allowing easy access to different sections.
 ----
-**Open a post:**
+</details>
+
+<details><summary>Open a post:</summary>
+
 As a **user** I can **open a post by clicking on it** so that **I can read the post content**.
 <br/><br/>
 Acceptance criteria
 - When a post title or image is clicked, it will show the full details of the post.
 ----
-**Account registration:**
+</details>
+
+<details><summary>Account registration:</summary>
+
 As a **user** I can **register for an account** so that **I can comment on posts or create my own posts**.
 <br/><br/>
 Acceptance criteria
@@ -54,7 +61,10 @@ Acceptance criteria
 - The user must then provide a unique username and a password for their account.
 - The user must be logged into their account to comment on posts
 ----
-**Comment on a post:**
+</details>
+
+<details><summary>Comment on a post:</summary>
+
 As a **registered user** I can **leave a comment on a post** so that **other users can see my comment on that post**.
 <br/><br/>
 Acceptance criteria
@@ -62,20 +72,29 @@ Acceptance criteria
 - The comment must be approved by a site admin before being seen by other users.
 - The user can edit their comment, but it will require reapproving by a site admin or they can delete the comment entirely.
 ----
-**Approve or delete comments on a post:**
+</details>
+
+<details><summary>Approve or delete comments on a post:</summary>
+
 As a **site admin** I can **approve or delete comments** so that **nothing hateful or objectionable is visible**.
 <br/><br/>
 Acceptance criteria
 - If the site admin is logged in as an admin, they can approve comments to be seen by users.
 - If the site admin is logged in as an admin, they can delete users accounts if they are constantly attempting to be harmful to the website and its users.
 ----
-**Read about the site:**
+</details>
+
+<details><summary>Read about the site:</summary>
+
 As a **user** I can **click the about link** so that **I can read about the sites purpose, frequently asked questions and its rules**.
 <br/><br/>
 Acceptance criteria
 - When the about link in the navigation bar is clicked, the about text will display.
 ----
-**Create a post:**
+</details>
+
+<details><summary>Create a post:</summary>
+
 As a **registered user** I can **make my own posts** so that **other users can see and comment on my post**.
 <br/><br/>
 Acceptance criteria
@@ -84,16 +103,23 @@ Acceptance criteria
 - The post must be approved by a site admin before being seen by other users.
 - The user can edit their post, but it will require reapproving by a site admin or they can delete the post entirely.
 ----
-**Approve or delete user created posts:**
+</details>
+
+<details><summary>Approve or delete user created posts:</summary>
+
 As a **site admin** I can **approve or delete posts** so that **nothing hateful or objectionable is on the post**.
 <br/><br/>
 Acceptance criteria
 - If the site admin is logged in as an admin, they can approve posts to be seen by users or delete them.
 - If the site admin is logged in as an admin, they can delete users accounts if they are constantly attempting to be harmful to the website and its users.
 ----
+</details>
+
 ### Should Have
 ----
-**Confirmation messages:**
+
+<details><summary>Confirmation messages:</summary>
+
 As a **registered user** I can **see that my comment or post was submitted successfully** so that **I am sure my comment or post was submitted**.
 <br/><br/>
 Acceptance criteria
@@ -101,21 +127,31 @@ Acceptance criteria
 
 - If the registered user deletes or edits a comment or post, there should be some kind of confirmation message for the user.
 ----
+</details>
+
 ### Could Have
+
 ----
-**Like or dislike a post:**
+
+<details><summary>Like or dislike a post:</summary>
+
 As a **registered user** I can **click a button to like or dislike a post** so that **other users can see if more people like or dislike a post**.
 <br/><br/>
 Acceptance criteria
 - If the registered user is logged in, they can click a like or dislike button, increasing the posts like or dislike counter.
 - Other users can see the like to dislike ratio on a post before clicking on it
 ----
-**Filter posts by pet:**
+</details>
+
+<details><summary>Filter posts by pet:</summary>
+
 As a **user** I can **add a post filter** so that **I can only see posts of a specific pet**.
 <br/><br/>
 Acceptance criteria
 - The user can interact with a dropdown filter, so that only posts which show a specific kind of pet are shown (e.g dog, cat, bird etc)
 ----
+</details>
+
 ## Product Planning
 ### Wireframes
 ### Entity Relationship Diagram
@@ -139,7 +175,10 @@ GitHub Copilot helped with some suggested user stories and grammatical errors.
 
 CSS validation was checked using [W3C CSS Validation Service.](https://jigsaw.w3.org/css-validator/)
 
+<details><summary>style.css</summary>
+
 ![css validation](README_assets/CSS_Validation.jpg)
+</details>
 
 ### Python
 
@@ -147,11 +186,15 @@ CSS validation was checked using [W3C CSS Validation Service.](https://jigsaw.w3
 
 JavaScript validation was checked using [JSHint](https://jshint.com/)
 
-comments.js
-![comments.js validation](README_assets/Comments.js_Validation.jpg)
+<details><summary>comments.js</summary>
 
-posts.js
+![comments.js validation](README_assets/Comments.js_Validation.jpg)
+</details>
+
+<details><summary>posts.js</summary>
+
 ![posts.js validation](README_assets/Posts.js_Validation.jpg)
+</details>
 
 ## Deployment
 
