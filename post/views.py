@@ -64,8 +64,10 @@ class PostList(generic.ListView):
         context = super().get_context_data(**kwargs)
         for post in context['object_list']:
             post.comment_count = post.comments.filter(approved=True).count()
-        context['current_pet_type'] = self.request.GET.get('filterByPetType', 'all')
-        context['current_user_filter'] = self.request.GET.get('filterByUser', 'all')
+        context['current_pet_type'] = self.request.GET.get(
+            'filterByPetType', 'all')
+        context['current_user_filter'] = self.request.GET.get(
+            'filterByUser', 'all')
         return context
 
 
@@ -108,7 +110,9 @@ def post_detail(request, post_id):
             comment.author = request.user
             comment.post = post
             comment.save()
-            messages.add_message(request, messages.SUCCESS, 'Comment submitted and awaiting approval.')
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Comment submitted and awaiting approval.')
 
     comment_form = CommentForm()
 
@@ -145,11 +149,15 @@ def post_create(request):
             post = post_create_form.save(commit=False)
             post.author = request.user
             post.save()
-            messages.add_message(request, messages.SUCCESS, 'Post submitted and awaiting approval.')
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Post submitted and awaiting approval.')
             return redirect('home')  # Change to your posts list view
 
     post_create_form = UserPostForm()
-    return render(request, 'post/post_create.html', {'post_create_form': post_create_form, },)
+    return render(
+        request, 'post/post_create.html',
+        {'post_create_form': post_create_form, },)
 
 
 def comment_edit(request, post_id, comment_id):
@@ -177,9 +185,13 @@ def comment_edit(request, post_id, comment_id):
             comment.post = post
             comment.approved = False
             comment.save()
-            messages.add_message(request, messages.SUCCESS, 'Comment updated and awaiting approval.')
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Comment updated and awaiting approval.')
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating comment.')
+            messages.add_message(
+                request, messages.ERROR,
+                'Error updating comment.')
 
     return HttpResponseRedirect(reverse('post_detail', args=[post_id]))
 
@@ -201,19 +213,25 @@ def comment_delete(request, post_id, comment_id):
         comment.delete()
         messages.add_message(request, messages.SUCCESS, 'Comment deleted.')
     else:
-        messages.add_message(request, messages.ERROR, 'You can only delete your own comments.')
+        messages.add_message(
+            request, messages.ERROR,
+            'You can only delete your own comments.')
 
     return HttpResponseRedirect(reverse('post_detail', args=[post_id]))
+
 
 def post_edit(request, post_id):
     post = get_object_or_404(UserPost, id=post_id)
     if request.method == 'POST':
-        post_edit_form = UserPostForm(request.POST, request.FILES, instance=post)
+        post_edit_form = UserPostForm(
+            request.POST, request.FILES, instance=post)
         if post_edit_form.is_valid():
             post = post_edit_form.save(commit=False)
-            post.approved = False  # Sets the post approval back to false. Uncomment when not testing
+            post.approved = False
             post.save()
-            messages.add_message(request, messages.SUCCESS, 'Post updated and awaiting approval.')
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Post updated and awaiting approval.')
             return redirect('home')
     else:
         post_edit_form = UserPostForm(instance=post)
@@ -240,5 +258,7 @@ def post_delete(request, post_id):
         messages.add_message(request, messages.SUCCESS, 'Post deleted.')
 
     else:
-        messages.add_message(request, messages.ERROR, 'You can only delete your own posts.')
+        messages.add_message(
+            request, messages.ERROR,
+            'You can only delete your own posts.')
     return redirect('home')
