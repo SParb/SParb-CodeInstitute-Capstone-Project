@@ -18,6 +18,9 @@ Pettit is a full stack web application made for my final capstone project at Cod
   - [Fonts](#fonts)
 - [Features](#features)
 - [AI Implementation](#ai-implementation) 
+  - [Coding](#coding)
+  - [Debugging](#debugging)
+  - [Asset Creation](#asset-creation)
 - [Testing](#testing)
 - [Validation](#validation)
   - [HTML](#html)
@@ -184,9 +187,12 @@ Wireframes on both large screens and smaller screens were created using the [Bal
 
 ### Colours
 
-Chosen color palette using [Coolor](https://coolors.co/)
+Chosen color palette using [Coolor.](https://coolors.co/)
+
+<details><summary>Coolor Colour Palette</summary>
 
 ![coolor colour palette](README_assets/coolor.png)
+</details>
 
 ### Fonts
 
@@ -195,7 +201,24 @@ I wanted to use a simplistic font so I decided to use Verdana as a primary font 
 ## Features
 
 ## AI Implementation
-GitHub Copilot helped with some suggested user stories and grammatical errors.
+
+### Coding
+
+Reflection: AI was efficient at saving time by quickly producing repetitive code. It also helped by creating simple foundations for functions and classes that could be expanded upon. However, any code produced by AI that I did not immediately understand was diregarded, as relying on such code can lead to not fully understanding your own project.
+
+Example: AI assisted in creating basic view functions and writing repetitive code in the HTML files.
+
+### Debugging
+
+Reflection: AI was a helpful tool in speeding up the fixing of bugs and errors that humans will inevitably make.
+
+Example: Most simple bugs were resolved manually. However, more complex bugs typically those spanning multiple files were resolved by asking AI for help, using any error messages provided by the local server when DEBUG = True in the settings.py file or by the terminal.
+
+### Asset Creation
+
+Reflection: AI was able to produce images appropriate for the websites function and aesthetic.
+
+Example: AI was used to generate the Pettit logo and icon when the user encounters a 404 error.
 
 ## Testing
 
