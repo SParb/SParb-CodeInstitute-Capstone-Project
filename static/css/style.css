@@ -4,6 +4,9 @@
   --tertiary-color:#d2d7df;
   --quaternary-color:#bdbbb0;
   --quinary-color:#8a897c;
+  --primary-font: Verdana;
+  --secondary-font: Roboto;
+  --tertiary-font: Lato;
 }
 
 /*base.html*/
@@ -12,6 +15,7 @@ body {
     background-color: var(--quaternary-color);
     padding-top: 120px;
     color: var(--primary-color);
+    font-family: var(--primary-font), var(--secondary-font), var(--tertiary-font), system-ui;
 }
 
 main {
