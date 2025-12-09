@@ -2,7 +2,9 @@
 ## Overview
 <img src="README_assets/pettit_icon.png" alt="pettit logo" width="250"/>
 
-Pettit is a full stack web application made for my final capstone project at Code Institute. It was built using all the skills I learned during Code Institute, primarily with the Django web framework that uses python but also including HTML, CSS and JavaScript. The main objective of Pettit is to provide users with a way to share images and questions about their pets for other users to see and leave comments on.
+Pettit is a full stack web application created for my final capstone project at Code Institute. It was built using all the skills I learned during the course, primarily with the Django web framework (which uses Python), but also including HTML, CSS, and JavaScript. The main objective of Pettit is to provide users with a way to share images and questions about their pets, allowing other users to view and comment on them.
+
+[View Pettit here.](https://pettit-003b91eeeaeb.herokuapp.com/)
 
 ## Table of contents
 - [Overview](#overview)
@@ -32,7 +34,10 @@ Pettit is a full stack web application made for my final capstone project at Cod
 
 ## Agile/User Stories
 
-[Project board](https://github.com/users/SParb/projects/10)
+This project was created using the agile methodology with MoSCoW prioritisation, where user stories were split into "must have," "should have," and "could have" groups. All user stories in the "must have" group should be fulfilled to ensure the project meets minimum viability. 
+
+The project board containing the user stories can be viewed
+[here.](https://github.com/users/SParb/projects/10) The user stories are also shown below this section.
 
 ### Must Have
 ----
@@ -183,6 +188,13 @@ Wireframes on both large screens and smaller screens were created using the [Bal
 
 ### Entity Relationship Diagram
 
+Below is the entity relationship diagram (ERD) which showcases the relationships between the modals. This was created using [LucidChart](https://www.lucidchart.com/pages).
+
+<details><summary>Entity Relationship Diagram</summary>
+
+![Entity Relationship Diagram](README_assets/ERD.jpg)
+</details>
+
 ## UX Design
 
 ### Colours
@@ -196,7 +208,7 @@ Chosen color palette using [Coolor.](https://coolors.co/)
 
 ### Fonts
 
-I wanted to use a simplistic font so I decided to use Verdana as a primary font followed by [Roboto](https://fonts.google.com/specimen/Roboto?query=roboto) and [Lato](https://fonts.google.com/?query=lato) as backup fonts which were imported using [Google Fonts.](https://fonts.google.com/) These fonts can be easily changed in the future if needed.
+I wanted to use simplistic fonts so I decided to use Verdana as a primary font followed by [Roboto](https://fonts.google.com/specimen/Roboto?query=roboto) and [Lato](https://fonts.google.com/?query=lato) as backup fonts which were imported using [Google Fonts.](https://fonts.google.com/) These fonts can be easily changed in the future if needed.
 
 ## Features
 
