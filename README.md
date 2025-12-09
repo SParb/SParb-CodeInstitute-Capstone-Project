@@ -2,7 +2,7 @@
 ## Overview
 <img src="README_assets/pettit_icon.png" alt="pettit logo" width="250"/>
 
-Pettit is a full stack web application made for my final capstone project at Code Institute. It was built using all the skills I learned during Code Institute, primarily with the Django web framework. The main objective of Pettit is to provide users with a way to share images and questions about their pets for other users to see and leave comments on.
+Pettit is a full stack web application made for my final capstone project at Code Institute. It was built using all the skills I learned during Code Institute, primarily with the Django web framework that uses python but also including HTML, CSS and JavaScript. The main objective of Pettit is to provide users with a way to share images and questions about their pets for other users to see and leave comments on.
 
 ## Table of contents
 - [Overview](#overview)
@@ -153,15 +153,44 @@ Acceptance criteria
 </details>
 
 ## Product Planning
+
 ### Wireframes
+
+Wireframes on both large screens and smaller screens were created using the [Balsamiq program.](https://balsamiq.com/)
+
+<details><summary>Home Page</summary>
+
+![Home Page Wireframe](README_assets/Homepage_Wireframe.jpg)
+</details>
+
+<details><summary>About Page</summary>
+
+![About Page Wireframe](README_assets/About_Wireframe.jpg)
+</details>
+
+<details><summary>Post Detail Page</summary>
+
+![Post Detail Page Wireframe](README_assets/PostDetail_Wireframe.jpg)
+</details>
+
+<details><summary>Create Post Page</summary>
+
+![Create Post Page Wireframe](README_assets/CreatePost_Wireframe.jpg)
+</details>
+
 ### Entity Relationship Diagram
+
 ## UX Design
+
 ### Colours
+
 Chosen color palette using [Coolor](https://coolors.co/)
 
 ![coolor colour palette](README_assets/coolor.png)
 
 ### Fonts
+
+I wanted to use a simplistic font so I decided to use Verdana as a primary font followed by [Roboto](https://fonts.google.com/specimen/Roboto?query=roboto) and [Lato](https://fonts.google.com/?query=lato) as backup fonts which were imported using [Google Fonts.](https://fonts.google.com/) These fonts can be easily changed in the future if needed.
 
 ## Features
 
@@ -178,22 +207,22 @@ HTML validation was checked using [W3C HTML Validation Service.](https://validat
 
 <details><summary>Home Page</summary>
 
-![Home page HTML validation](README_assets/Homepage_Validation.jpg)
+![Home Page HTML Validation](README_assets/Homepage_Validation.jpg)
 </details>
 
 <details><summary>About Page</summary>
 
-![About page HTML validation](README_assets/About_Validation.jpg)
+![About Page HTML Validation](README_assets/About_Validation.jpg)
 </details>
 
-<details><summary>Post detail page</summary>
+<details><summary>Post Detail Page</summary>
 
-![Post detail page HTML validation](README_assets/PostDetail_Validation.jpg)
+![Post Detail Page HTML Validation](README_assets/PostDetail_Validation.jpg)
 </details>
 
-<details><summary>Create post page</summary>
+<details><summary>Create Post Page</summary>
 
-![Create post page HTML validation](README_assets/CreatePost_Validation.jpg)
+![Create Post Page HTML Validation](README_assets/CreatePost_Validation.jpg)
 </details>
 
 ### CSS
