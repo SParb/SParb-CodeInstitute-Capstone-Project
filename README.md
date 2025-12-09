@@ -174,9 +174,31 @@ GitHub Copilot helped with some suggested user stories and grammatical errors.
 
 ### HTML
 
+HTML validation was checked using [W3C HTML Validation Service.](https://validator.w3.org/) There were no validation errors with the exception of a few validation errors on the sign-up page as this was managed by the Django auth package.
+
+<details><summary>Home Page</summary>
+
+![Home page HTML validation](README_assets/Homepage_Validation.jpg)
+</details>
+
+<details><summary>About Page</summary>
+
+![About page HTML validation](README_assets/About_Validation.jpg)
+</details>
+
+<details><summary>Post detail page</summary>
+
+![Post detail page HTML validation](README_assets/PostDetail_Validation.jpg)
+</details>
+
+<details><summary>Create post page</summary>
+
+![Create post page HTML validation](README_assets/CreatePost_Validation.jpg)
+</details>
+
 ### CSS
 
-CSS validation was checked using [W3C CSS Validation Service.](https://jigsaw.w3.org/css-validator/)
+CSS validation was checked using [W3C CSS Validation Service.](https://jigsaw.w3.org/css-validator/) No validation errors were present.
 
 <details><summary>style.css</summary>
 
@@ -189,7 +211,7 @@ Python validation was checked using [Heroku's python linter](https://pep8ci.hero
 
 ### JavaScript
 
-JavaScript validation was checked using [JSHint.](https://jshint.com/) The only warnings recieved were
+JavaScript validation was checked using [JSHint.](https://jshint.com/) No validation errors were present
 
 <details><summary>comments.js</summary>
 
