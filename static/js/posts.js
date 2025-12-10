@@ -15,7 +15,7 @@ const confirmDeletePost = document.getElementById("confirmDeletePost");
 if (editPostButton) {
     editPostButton.addEventListener("click", function() {
         const postId = editPostButton.dataset.postId;
-        window.location.href = `/${postId}/edit-post/`;
+        window.location.href = `/${postId}/editpost/`;
     });
 }
 
@@ -32,7 +32,7 @@ if (editPostButton) {
 if (deletePostButton) {
     deletePostButton.addEventListener("click", function() {
         const postId = deletePostButton.dataset.postId;
-        confirmDeletePost.href = `/${postId}/delete-post/`;
+        confirmDeletePost.href = `/${postId}/deletepost/`;
         deletePostModal.show();
     });
 }

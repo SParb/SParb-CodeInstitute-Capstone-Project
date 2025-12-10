@@ -19,6 +19,15 @@ Pettit is a full stack web application created for my final capstone project at 
   - [Wireframes](#wireframes)
   - [Entity Relationship Diagram (ERD)](#entity-relationship-diagram)
 - [Features](#features)
+  - [Navigation](#navigation)
+  - [Home Page](#home-page)
+  - [About Page](#about-page)
+  - [Authentication](#authentication)
+  - [User Posts](#user-posts)
+  - [User Comments](#user-comments)
+  - [Post Filter](#post-filter)
+  - [Confirmation](#confirmation)
+  - [Error Pages](#error-pages)
 - [AI Implementation](#ai-implementation) 
   - [Coding](#coding)
   - [Debugging](#debugging)
@@ -211,6 +220,135 @@ Below is the entity relationship diagram (ERD) which showcases the relationships
 </details>
 
 ## Features
+
+### Navigation
+A responsive navigation bar is always stuck at the top of a webpage for site navigation.
+
+<details><summary>Logged In</summary>
+Navigation bar when a user is logged in. They can create a post and log out, but cannot log in or sign up as they are already logged in.
+
+![Navbar when logged in](README_assets/features/NavigationLoggedIn.jpg)
+</details>
+
+<details><summary>Logged Out</summary>
+Navigation bar when a user is not logged in. They can sign up or log in, but cannot create a post or log out because they are not logged in.
+
+![Navbar when not logged in](README_assets/features/NavigationLoggedOut.jpg)
+</details>
+
+<details><summary>Mobile View</summary>
+On smaller screens the Navigation bar becomes a burger format.
+
+![Navbar on smaller screens](README_assets/features/NavigationMobile.jpg)
+</details>
+
+### Home page
+
+<details><summary>Home Page</summary>
+The home page will show the user a collection of uploaded posts. They show the post title, the author, an image to go along with the post, time created and the number of comments on that post. If no image is provided with a post it will use the pettit logo as a placeholder.
+
+Users can click on a post to view them in more detail. There are six posts per page with pagination at the bottom of the page to look at more posts.
+
+![Home Page](README_assets/features/HomePage.jpg)
+</details>
+
+### About page
+
+<details><summary>About Page</summary>
+An about page which will tell the user the purpose of the website and rules. A user can also send feedback to the developers on ways to improve the website. A confirmation message will appear if a user submits feedback.
+
+![About Page](README_assets/features/AboutPage.jpg)
+</details>
+
+### Authentication
+
+<details><summary>Sign Up</summary>
+The sign up page will ask the user to create an account so that they can create their own posts and leave comments on posts.
+
+![Sign Up](README_assets/features/SignUp.jpg)
+</details>
+
+<details><summary>Log In</summary>
+The log in page will ask the user for their credentials to log in. If they do not have an account they can be redirected to the sign up page to create an account.
+
+![Log In](README_assets/features/LogIn.jpg)
+</details>
+
+<details><summary>Log Out</summary>
+When a user wants to log out they are sent to the log out page to confirm they do want to log out.
+
+![Log Out](README_assets/features/LogOut.jpg)
+</details>
+
+### User Posts
+
+<details><summary>Create Post</summary>
+The page a logged in user is sent to when they want to create their own post. A post must have a title and pet type and some description. Users can upload an image, if no image is uploaded then a default placeholder image will be used instead. Posts must be approved by an admin before other users can see the post on the homepage.
+
+![Create Post](README_assets/features/CreatePost.jpg)
+</details>
+
+<details><summary>Edit Post</summary>
+On a post a logged in user owns, a button will appear giving them the option to edit their post in a similar fashion as creating a post. Edited posts must be reapproved by an admin before other users can see the post on the homepage.
+
+![Edit Post](README_assets/features/EditPost.jpg)
+</details>
+
+<details><summary>Delete Post</summary>
+On a post a logged in user owns, a button will appear giving them the option to delete their post. A confirmation modal appears asking if they are sure they want to delete their post.
+
+![Delete Post](README_assets/features/DeletePost.jpg)
+</details>
+
+### User Comments
+
+<details><summary>Post Comment</summary>
+A logged in user can post a comment on a post. The posted comment will be greyed out and invisible to other users until it has been approved by an admin.
+
+![Post Comment](README_assets/features/CreateComment.jpg)
+</details>
+
+<details><summary>Edit Comment</summary>
+A logged in user can edit a comment they previously posted on a post. The edited comment will be greyed out and invisible to other users until it has been reapproved by an admin.
+
+![Edit Comment](README_assets/features/EditComment.jpg)
+</details>
+
+<details><summary>Delete Comment</summary>
+A logged in user can delete a comment they previously posted on a post. A confirmation modal appears asking if they are sure they want to delete their comment.
+
+![Delete Comment](README_assets/features/DeleteComment.jpg)
+</details>
+
+### Post Filter
+
+<details><summary>Post Filter</summary>
+A user can use the filter to only show posts of a certain pet type (All, Cat, Dog, Bird Rabbit, Other). A logged in user can also filter posts by posts they created (All, My Posts). Both filters can be used at the same time.
+
+![Post Filter](README_assets/features/PostFilter.jpg)
+</details>
+
+### Confirmation
+
+<details><summary>Confirmation</summary>
+Whenever a user logs in or out, create/edit/delete a post or comment a message at the top of the page will show up confirmation the action they did has be acknowledged. Below is an example when a user logs in.
+
+![Confirmation](README_assets/features/Confirmation.jpg)
+</details>
+
+### Error Pages
+
+<details><summary>404</summary>
+When the user submits an invalid URL it will send the user to a custom 404 error page.
+
+![Confirmation](README_assets/features/404.jpg)
+</details>
+
+<details><summary>Other Errors</summary>
+If a user tries to create, edit, or delete a post or comment using the URL but is not the owner of that post or comment, they will be sent to an error page stating that they must be the owner or logged in. Below is an example of trying to edit a post the user does not own.
+
+![Error Example](README_assets/features/ErrorExample.jpg)
+</details>
 
 ## AI Implementation
 
