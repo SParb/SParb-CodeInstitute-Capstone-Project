@@ -8,16 +8,16 @@ Pettit is a full stack web application created for my final capstone project at 
 
 ## Table of contents
 - [Overview](#overview)
-- [Agile/User Stories](#user-stories)
-  - [Must Have](#must-have)
-  - [Should Have](#should-have)
-  - [Could Have](#could-have)
-- [Product Planning](#product-planning)
-  - [Wireframes](#wireframes)
-  - [Entity Relationship Diagram (ERD)](#entity-relationship-diagram)
 - [UX Design](#ux-design)
   - [Colours](#colours)
   - [Fonts](#fonts)
+  - [Agile and User Stories](#agile-and-user-stories)
+    - [Must Have](#must-have)
+    - [Should Have](#should-have)
+    - [Could Have](#could-have)
+- [Product Planning](#product-planning)
+  - [Wireframes](#wireframes)
+  - [Entity Relationship Diagram (ERD)](#entity-relationship-diagram)
 - [Features](#features)
 - [AI Implementation](#ai-implementation) 
   - [Coding](#coding)
@@ -32,14 +32,29 @@ Pettit is a full stack web application created for my final capstone project at 
 - [Deployment](#deployment)
 - [Credits](#credits)
 
-## Agile/User Stories
+## UX Design
+
+### Colours
+
+Chosen color palette using [Coolor.](https://coolors.co/) I chose a very simple and non flashy colour palette for simplicity. This can always be changed in the future easily if enough feedback suggests we should.
+
+<details><summary>Coolor Colour Palette</summary>
+
+![coolor colour palette](README_assets/coolor.png)
+</details>
+
+### Fonts
+
+I wanted to use simplistic fonts so I decided to use Verdana as a primary font followed by [Roboto](https://fonts.google.com/specimen/Roboto?query=roboto) and [Lato](https://fonts.google.com/?query=lato) as backup fonts which were imported using [Google Fonts.](https://fonts.google.com/) These fonts can be easily changed in the future if needed.
+
+### Agile and User Stories
 
 This project was created using the agile methodology with MoSCoW prioritisation, where user stories were split into "must have," "should have," and "could have" groups. All user stories in the "must have" group should be fulfilled to ensure the project meets minimum viability. 
 
 The project board containing the user stories can be viewed
 [here.](https://github.com/users/SParb/projects/10) The user stories are also shown below this section.
 
-### Must Have
+#### Must Have
 ----
 <details><summary>Responsive web design:</summary>
 
@@ -123,7 +138,7 @@ Acceptance criteria
 ----
 </details>
 
-### Should Have
+#### Should Have
 ----
 
 <details><summary>Confirmation messages:</summary>
@@ -137,7 +152,7 @@ Acceptance criteria
 ----
 </details>
 
-### Could Have
+#### Could Have
 
 ----
 
@@ -194,21 +209,6 @@ Below is the entity relationship diagram (ERD) which showcases the relationships
 
 ![Entity Relationship Diagram](README_assets/ERD.jpg)
 </details>
-
-## UX Design
-
-### Colours
-
-Chosen color palette using [Coolor.](https://coolors.co/)
-
-<details><summary>Coolor Colour Palette</summary>
-
-![coolor colour palette](README_assets/coolor.png)
-</details>
-
-### Fonts
-
-I wanted to use simplistic fonts so I decided to use Verdana as a primary font followed by [Roboto](https://fonts.google.com/specimen/Roboto?query=roboto) and [Lato](https://fonts.google.com/?query=lato) as backup fonts which were imported using [Google Fonts.](https://fonts.google.com/) These fonts can be easily changed in the future if needed.
 
 ## Features
 
@@ -275,7 +275,7 @@ Python validation was checked using [Heroku's python linter](https://pep8ci.hero
 
 ### JavaScript
 
-JavaScript validation was checked using [JSHint.](https://jshint.com/) No validation errors were present
+JavaScript validation was checked using [JSHint.](https://jshint.com/) No validation errors were present.
 
 <details><summary>comments.js</summary>
 
@@ -289,6 +289,24 @@ JavaScript validation was checked using [JSHint.](https://jshint.com/) No valida
 
 ## Deployment
 
+[Link to Github Repository.](https://github.com/SParb/SParb-CodeInstitute-Capstone-Project)
+
+[Website Deployment using Heroku.](https://pettit-003b91eeeaeb.herokuapp.com/)
+
+Using Heroku, I was able to create a Heroku app (Pettit) which was then connected to my GitHub repository. Several config vars were set in the Pettit app settings so that my project could use the database provided by Code Institute (with secret key) and access my Cloudinary account for handling uploaded media.
+
 ## Credits
 
-[Back to table of contents](#table-of-contents)
+- The step-by-step process used to set up a basic Django project was created by Code Institute. The database was also provided by Code Institute.
+- VSCode was the IDE used to create this project
+- Copilot AI for creating certain assets and helping with debugging and basic code generation.
+- Bootstrap framework for front-end templates.
+- Cloudinary for handling all uploaded media.
+- Google Lighthouse for checking site optimisation.
+- Heroku for hosting the final deployment.
+- And all other sites and applications mentioned in this README.
+
+Thank you to the Code Institute team for teaching and supporting me.
+
+----
+[Back to table of contents.](#table-of-contents)
