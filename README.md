@@ -2,7 +2,7 @@
 ## Overview
 <img src="README_assets/pettit_icon.png" alt="pettit logo" width="250"/>
 
-Pettit is a full stack web application created for my final capstone project at Code Institute. It was built using all the skills I learned during the course, primarily with the Django web framework (which uses Python), but also including HTML, CSS, and JavaScript. The main objective of Pettit is to provide users with a way to share images and questions about their pets, allowing other users to view and comment on them.
+Pettit is a full stack web application created for my final capstone project at Code Institute. It was built using all the skills I learned during the course, primarily with the Django web framework (which uses Python), but also including HTML, CSS, and JavaScript. The main objective of Pettit is to provide users with a way to post images and questions about their pets, allowing other users to view and comment on them.
 
 [View Pettit here.](https://pettit-003b91eeeaeb.herokuapp.com/)
 
@@ -190,7 +190,7 @@ Acceptance criteria
 
 ### Wireframes
 
-Wireframes on both large screens and smaller screens were created using the [Balsamiq program.](https://balsamiq.com/)
+Wireframes on both large screens and smaller screens were created using [Balsamiq.](https://balsamiq.com/)
 
 <details><summary>Home Page</summary>
 
@@ -445,6 +445,36 @@ If a user tries to access a page that does not exist they will be redirected to 
 ### Performance and Accessibility
 
 [Google Lighthouse](https://developer.chrome.com/docs/lighthouse) was used to test the performance and accessibility of my webpages.
+
+<details><summary>Home Page</summary>
+
+![Home Page Lighthouse](README_assets/testing/HomeLighthouse.jpg)
+</details>
+
+<details><summary>About Page</summary>
+
+![About Page Lighthouse](README_assets/testing/AboutLighthouse.jpg)
+</details>
+
+<details><summary>Post Detail</summary>
+
+![Post Detail Lighthouse](README_assets/testing/PostDetailLighthouse.jpg)
+</details>
+
+<details><summary>Sign Up</summary>
+
+![Sign Up Lighthouse](README_assets/testing/SignUpLighthouse.jpg)
+</details>
+
+<details><summary>Log In</summary>
+
+![Log In Lighthouse](README_assets/testing/LogInLighthouse.jpg)
+</details>
+
+<details><summary>Log Out</summary>
+
+![Log Out Lighthouse](README_assets/testing/LogOutLighthouse.jpg)
+</details>
 
 ## Validation
 
