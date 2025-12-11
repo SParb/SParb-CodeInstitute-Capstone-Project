@@ -33,6 +33,8 @@ Pettit is a full stack web application created for my final capstone project at 
   - [Debugging](#debugging)
   - [Asset Creation](#asset-creation)
 - [Testing](#testing)
+  - [Manual Testing](#manual-testing)
+  - [Performance and Accessibility](#performance-and-accessibility)
 - [Validation](#validation)
   - [HTML](#html)
   - [CSS](#css)
@@ -372,6 +374,78 @@ Example: AI was used to generate the Pettit logo and icon when the user encounte
 
 ## Testing
 
+### Manual Testing
+
+<details><summary>Try to create post while not logged in</summary>
+If a user tries to create a post while not logged in they will be redirected to this page.
+
+![Try to create post while not logged in](README_assets/testing/CreatePostLoggedOut.jpg)
+</details>
+
+<details><summary>Try to edit post while not logged in</summary>
+If a user tries to edit a post while not logged in they will be redirected to this page.
+
+![Try to edit post while not logged in](README_assets/testing/EditPostLoggedOut.jpg)
+</details>
+
+<details><summary>Try to delete post while not logged in</summary>
+If a user tries to delete a post while not logged in they will be redirected to this page.
+
+![Try to delete post while not logged in](README_assets/testing/DeletePostLoggedOut.jpg)
+</details>
+
+<details><summary>Try to access an unapproved post</summary>
+If a user tries to access a post that has not been yet approved they will be redirected to this page.
+
+![Try to access an unapproved post](README_assets/testing/UnapprovedPost.jpg)
+</details>
+
+<details><summary>Try to comment on a post while not logged in</summary>
+If a user tries to comment on a post while not logged in they told they need to log in to comment.
+
+![Try to comment on a post while not logged in](README_assets/testing/CommentLoggedOut.jpg)
+</details>
+
+<details><summary>Try to edit post that does not belong to the logged in user</summary>
+If a logged in user tries to edit a post they do not own they will be redirected to this page.
+
+![Try to edit post that does not belong to the logged in user](README_assets/testing/EditPostLoggedIn.jpg)
+</details>
+
+<details><summary>Try to delete post that does not belong to the logged in user</summary>
+If a logged in user tries to delete a post they do not own they will be redirected to this page.
+
+![Try to delete post that does not belong to the logged in user](README_assets/testing/DeletePostLoggedIn.jpg)
+</details>
+
+<details><summary>Try to edit or delete comment that does not belong to the logged in user</summary>
+If a logged in user cannot edit or delete a comment they did not post.
+
+![Try to edit or delete comment that does not belong to the logged in user](README_assets/testing/CommentLoggedIn.jpg)
+</details>
+
+<details><summary>Creating a post requires approval</summary>
+If a logged in user creates a post an admin will have to approve the post before anyone can see it.
+
+![Creating a post requires approval](README_assets/testing/CreatePostApproval.jpg)
+</details>
+
+<details><summary>Commenting requires approval</summary>
+If a logged in user comments on a post an admin will have to approve the comment before anyone can see it but the owner can see it with a message saying waiting for approval.
+
+![Commenting requires approval](README_assets/testing/CommentApproval.jpg)
+</details>
+
+<details><summary>Broken URL</summary>
+If a user tries to access a page that does not exist they will be redirected to a 404 error page.
+
+![Broken URL](README_assets/testing/404.jpg)
+</details>
+
+### Performance and Accessibility
+
+[Google Lighthouse](https://developer.chrome.com/docs/lighthouse) was used to test the performance and accessibility of my webpages.
+
 ## Validation
 
 ### HTML
@@ -431,7 +505,7 @@ JavaScript validation was checked using [JSHint.](https://jshint.com/) No valida
 
 [Website Deployment using Heroku.](https://pettit-003b91eeeaeb.herokuapp.com/)
 
-Using Heroku, I was able to create a Heroku app (Pettit) which was then connected to my GitHub repository. Several config vars were set in the Pettit app settings so that my project could use the database provided by Code Institute (with secret key) and access my Cloudinary account for handling uploaded media.
+Using Heroku, I was able to create a Heroku app (Pettit) which was then connected to my GitHub repository. Several config vars were set in the Pettit app settings so that the app could use the database provided by Code Institute (with secret key) and access my Cloudinary account for handling uploaded media.
 
 ## Credits
 
@@ -444,7 +518,7 @@ Using Heroku, I was able to create a Heroku app (Pettit) which was then connecte
 - Heroku for hosting the final deployment.
 - And all other sites and applications mentioned in this README.
 
-Thank you to the Code Institute team for teaching and supporting me.
+Thank you to the Code Institute team for teaching and supporting me on this course.
 
 ----
 [Back to table of contents.](#table-of-contents)
