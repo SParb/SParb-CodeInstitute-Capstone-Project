@@ -419,7 +419,7 @@ If a logged in user tries to delete a post they do not own they will be redirect
 </details>
 
 <details><summary>Try to edit or delete comment that does not belong to the logged in user</summary>
-If a logged in user cannot edit or delete a comment they did not post.
+A logged in user cannot edit or delete a comment they did not post.
 
 ![Try to edit or delete comment that does not belong to the logged in user](README_assets/testing/CommentLoggedIn.jpg)
 </details>
