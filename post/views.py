@@ -221,6 +221,21 @@ def comment_delete(request, post_id, comment_id):
 
 
 def post_edit(request, post_id):
+    """
+    Edit a post.
+
+    **Context**
+
+    ``post``
+        An instance of :model:`post.UserPost`.
+
+    ``post_edit_form``
+        An instance of :form:`post.UserPostForm`
+
+    **Template:**
+
+    :template:`post_edit.html`
+    """
     post = get_object_or_404(UserPost, id=post_id)
     if request.method == 'POST':
         post_edit_form = UserPostForm(
@@ -249,8 +264,6 @@ def post_delete(request, post_id):
 
     ``post``
         An instance of :model:`post.UserPost`.
-    ``comment``
-        A single comment related to the post.
     """
     post = get_object_or_404(UserPost, id=post_id)
     if post.author == request.user:
